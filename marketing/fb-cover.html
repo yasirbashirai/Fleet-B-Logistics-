@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1640px; height: 624px; overflow: hidden; }
+  body { font-family: 'Inter', sans-serif; background: #101c2e; position: relative; color: #fff; }
+
+  /* truck photo right side */
+  .photo {
+    position: absolute; top: 0; right: 0; width: 60%; height: 100%;
+    background: url('../public/images/truck-blue-highway.jpg') center right / cover no-repeat;
+  }
+  .photo::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, #101c2e 0%, rgba(16,28,46,0.82) 22%, rgba(16,28,46,0.25) 60%, rgba(16,28,46,0.45) 100%);
+  }
+
+  /* flyer diagonals */
+  .slash1 { position: absolute; top: -10%; right: 210px; width: 90px; height: 120%; background: rgba(237,29,38,0.75); transform: skewX(-12deg); }
+  .slash2 { position: absolute; top: -10%; right: 320px; width: 44px; height: 120%; background: rgba(41,104,154,0.55); transform: skewX(-12deg); }
+
+  .content { position: absolute; inset: 0; padding: 60px 90px; z-index: 5; }
+
+  .logo-row { display: flex; align-items: center; gap: 22px; }
+  .logo-chip { background: #fff; border-radius: 10px; padding: 10px 16px; display: inline-flex; }
+  .logo-chip img { height: 62px; display: block; }
+  .authority { font: 700 15px 'Montserrat'; letter-spacing: 3px; color: #8fb7d9; text-transform: uppercase; }
+  .authority b { color: #fff; }
+
+  h1 { font: 900 64px/1.06 'Montserrat'; text-transform: uppercase; margin-top: 38px; letter-spacing: 0.5px; }
+  h1 .box { background: #ed1d26; padding: 2px 14px; display: inline-block; }
+
+  .tagline { margin-top: 18px; font: 700 22px 'Montserrat'; color: #ffd27a; letter-spacing: 1px; }
+
+  .strip { position: absolute; left: 0; right: 0; bottom: 0; height: 78px; background: #ed1d26; display: flex; align-items: center; justify-content: center; gap: 54px; z-index: 6; }
+  .strip .item { font: 700 21px 'Montserrat'; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+  .strip .dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; opacity: 0.85; }
+
+  .badge {
+    position: absolute; right: 96px; top: 82px; z-index: 7;
+    width: 208px; height: 208px; border-radius: 50%;
+    background: #101c2e; border: 6px solid #ed1d26;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+  }
+  .badge .pct { font: 900 62px 'Montserrat'; color: #fff; }
+  .badge .lbl { font: 700 13px 'Montserrat'; color: #8fb7d9; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; line-height: 1.5; }
+  .badge .sub { font: 700 11px 'Montserrat'; color: #ff8d92; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 5px; }
+</style>
+</head>
+<body>
+  <div class="photo"></div>
+  <div class="slash2"></div>
+  <div class="slash1"></div>
+
+  <div class="content">
+    <div class="logo-row">
+      <div class="logo-chip"><img src="../public/images/fbl-logo.png"></div>
+      <div class="authority">Asset-Based Carrier · <b>USDOT #4109105</b> · <b>MC #1569108</b></div>
+    </div>
+
+    <h1>Navigate Your <span class="box">Logistics</span><br>With <span class="box">FBL</span></h1>
+    <div class="tagline">“Honesty is what we stand on!”</div>
+  </div>
+
+  <div class="badge">
+    <div class="pct">20%</div>
+    <div class="lbl">Net Revenue<br>Share Pool</div>
+    <div class="sub">Owner-Operators</div>
+  </div>
+
+  <div class="strip">
+    <div class="item"><span class="dot"></span> (561) 460-5739</div>
+    <div class="item"><span class="dot"></span> fleet-b-logistics.vercel.app</div>
+    <div class="item"><span class="dot"></span> West Palm Beach, FL</div>
+    <div class="item"><span class="dot"></span> Dispatch 24/7</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+FACEBOOK LAUNCH POST — CAPTION
+================================
+
+🚛 IT'S OFFICIAL, FLEET B LOGISTICS IS ONLINE!
+
+Our brand-new website is live, built for the two groups we serve every single day:
+
+📦 SHIPPERS, get an instant freight quote from a real asset-based carrier. No brokers, no games, just our own trucks and honest numbers. Dispatch answers 24/7.
+
+🚚 OWNER-OPERATORS, this is the one you've been waiting for:
+✅ Keep 85.5% of gross on every load
+✅ Settlements in 4 business days
+✅ No forced dispatch, run YOUR routes
+✅ And our exclusive 20% NET REVENUE SHARE POOL after 5 years of service, you don't just drive for the company, you share in it.
+
+You can now apply AND complete your entire onboarding kit online, fill it out, sign it, done.
+
+👉 Visit: https://fleet-b-logistics.vercel.app
+📞 (561) 460-5739, we answer 24/7
+📍 West Palm Beach, Florida
+
+"Honesty is what we stand on!"
+
+#FleetBLogistics #OwnerOperators #Trucking #CDLA #OTR #TruckingCompany #FloridaTrucking #WestPalmBeach #FreightShipping #OwnerOperatorJobs #TruckDrivers #RevenueShare #Logistics
+
+--------------------------------
+POSTING NOTES
+- Cover image: FBL-facebook-cover.png (upload as Page cover, it is sized 1640x624 with all key content in the mobile-safe zone)
+- Post image: FBL-website-launch-post.png (1080x1350 portrait)
+- When the custom domain replaces fleet-b-logistics.vercel.app, update the URL in both images (edit marketing/*.html and re-render) and in this caption.
