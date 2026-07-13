@@ -3,7 +3,6 @@ import Image from "next/image";
 import { COMPANY } from "@/lib/company";
 import { FMT } from "@/lib/rates";
 import { SERVICES } from "@/data/services";
-import { REGIONS } from "@/data/regions";
 import { Icon } from "./Icons";
 
 export default function Footer() {
@@ -43,45 +42,41 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             {SERVICES.map((s) => (
               <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="hover:text-brand-redLight">
+                <Link href={`/services#${s.slug}`} className="hover:text-brand-redLight">
                   {s.name}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/services#industries" className="hover:text-brand-redLight">Industries We Serve</Link>
+            </li>
+            <li>
+              <Link href="/services#areas" className="hover:text-brand-redLight">Service Areas</Link>
+            </li>
             <li>
               <Link href="/quote" className="font-semibold text-brand-blueLight hover:text-white">
                 Request a Freight Quote →
               </Link>
             </li>
           </ul>
-
-          <h3 className="mt-8 font-heading text-sm font-bold uppercase tracking-widest text-white">Owner-Operators</h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-white/70">
-            <li><Link href="/owner-operators" className="hover:text-brand-redLight">{FMT.pool} Share Pool Program</Link></li>
-            <li><Link href="/apply" className="hover:text-brand-redLight">Apply to Lease On</Link></li>
-            <li><Link href="/onboarding" className="hover:text-brand-redLight">Online Onboarding Kit</Link></li>
-            <li><Link href="/resources" className="hover:text-brand-redLight">Driver Resources & Forms</Link></li>
-          </ul>
         </div>
 
-        {/* Areas */}
+        {/* Owner-operators + company */}
         <div>
-          <h3 className="font-heading text-sm font-bold uppercase tracking-widest text-white">Service Areas</h3>
+          <h3 className="font-heading text-sm font-bold uppercase tracking-widest text-white">Owner-Operators</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
-            {REGIONS.map((r) => (
-              <li key={r.slug}>
-                <Link href={`/areas/${r.slug}`} className="hover:text-brand-redLight">
-                  {r.name}{r.state !== "Regional" ? `, ${r.state === "Florida" ? "FL" : "GA"}` : ""}
-                </Link>
-              </li>
-            ))}
+            <li><Link href="/owner-operators#program" className="hover:text-brand-redLight">{FMT.pool} Share Pool Program</Link></li>
+            <li><Link href="/owner-operators#apply" className="hover:text-brand-redLight">Apply to Lease On</Link></li>
+            <li><Link href="/owner-operators#onboarding" className="hover:text-brand-redLight">Online Onboarding Kit</Link></li>
+            <li><Link href="/owner-operators#resources" className="hover:text-brand-redLight">Driver Resources & Forms</Link></li>
+            <li><Link href="/owner-operators#faq" className="hover:text-brand-redLight">Owner-Operator FAQ</Link></li>
           </ul>
+
           <h3 className="mt-8 font-heading text-sm font-bold uppercase tracking-widest text-white">Company</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             <li><Link href="/about" className="hover:text-brand-redLight">About Us</Link></li>
-            <li><Link href="/reviews" className="hover:text-brand-redLight">Reviews</Link></li>
-            <li><Link href="/blog" className="hover:text-brand-redLight">Blog</Link></li>
-            <li><Link href="/industries" className="hover:text-brand-redLight">Industries We Serve</Link></li>
+            <li><Link href="/about#reviews" className="hover:text-brand-redLight">Reviews</Link></li>
+            <li><Link href="/contact" className="hover:text-brand-redLight">Contact</Link></li>
           </ul>
         </div>
 

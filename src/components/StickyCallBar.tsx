@@ -21,7 +21,7 @@ export default function StickyCallBar() {
         <Icon name="doc" className="h-4 w-4" /> Get Quote
       </Link>
       <Link
-        href="/apply"
+        href="/owner-operators#apply"
         className="flex items-center justify-center gap-1.5 bg-brand-red py-3 font-heading text-xs font-bold uppercase text-white"
       >
         <Icon name="truck" className="h-4 w-4" /> Lease On

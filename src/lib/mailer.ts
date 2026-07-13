@@ -86,7 +86,7 @@ export async function notifyCompany(kind: string, data: Record<string, unknown>)
 // Sent immediately after the apply/contact form is completed, exactly as
 // requested: the welcome letter + where to find / how to sign the kit.
 export async function sendWelcomeLetter(to: string, firstName: string) {
-  const kitUrl = `${SITE_URL}/onboarding`;
+  const kitUrl = `${SITE_URL}/owner-operators#onboarding`;
   const pdfUrl = `${SITE_URL}/documents/fbl-owner-operator-onboarding-kit.pdf`;
   return sendMail({
     to,

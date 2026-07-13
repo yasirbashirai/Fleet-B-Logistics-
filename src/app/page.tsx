@@ -62,7 +62,7 @@ export default function HomePage() {
       {/* ============ HERO — flyer-style ============ */}
       <section className="relative overflow-hidden bg-brand-navy text-white">
         <Image
-          src="/images/hero-truck.jpg"
+          src="/images/truck-blue-highway.jpg"
           alt="Fleet B Logistics semi truck on the highway"
           fill
           priority
@@ -125,7 +125,7 @@ export default function HomePage() {
             {SERVICES.map((s, i) => (
               <Reveal key={s.slug} delay={i * 90}>
                 <Link
-                  href={`/services/${s.slug}`}
+                  href={`/services#${s.slug}`}
                   className="group block h-full overflow-hidden rounded-lg bg-brand-navyLight ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-brand-red"
                 >
                   <div className="relative h-40 overflow-hidden">
@@ -217,7 +217,7 @@ export default function HomePage() {
               ))}
             </ul>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link href="/apply" className="btn-primary">Apply Today</Link>
+              <Link href="/owner-operators#apply" className="btn-primary">Apply Today</Link>
               <Link href="/owner-operators" className="btn-secondary">Program Details</Link>
             </div>
           </Reveal>
@@ -298,7 +298,7 @@ export default function HomePage() {
                 {INDUSTRIES.map((ind) => (
                   <Link
                     key={ind.slug}
-                    href={`/industries/${ind.slug}`}
+                    href="/services#industries"
                     className="group flex items-center justify-between rounded-md border border-slate-200 px-4 py-3.5 text-sm font-bold text-brand-navy transition hover:border-brand-red hover:bg-brand-red hover:text-white"
                   >
                     {ind.name}
@@ -316,7 +316,7 @@ export default function HomePage() {
                 {REGIONS.map((r) => (
                   <Link
                     key={r.slug}
-                    href={`/areas/${r.slug}`}
+                    href="/services#areas"
                     className="group flex items-center gap-3 rounded-md border border-slate-200 px-4 py-3.5 text-sm font-bold text-brand-navy transition hover:border-brand-blue hover:bg-brand-blue hover:text-white"
                   >
                     <Icon name="pin" className="h-4 w-4 text-brand-red transition group-hover:text-white" />
@@ -340,7 +340,7 @@ export default function HomePage() {
                 Trusted by <span className="hl-red">Shippers</span> & Drivers
               </h2>
             </div>
-            <Link href="/reviews" className="btn-secondary !py-2.5 !text-xs">All Reviews</Link>
+            <Link href="/about#reviews" className="btn-secondary !py-2.5 !text-xs">All Reviews</Link>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {REVIEWS.slice(0, 3).map((r, i) => (

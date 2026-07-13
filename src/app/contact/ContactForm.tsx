@@ -40,7 +40,7 @@ export default function ContactForm() {
               <strong>Check your inbox</strong> — your welcome letter from Fleet B Logistics is on its way, with the
               link to complete your onboarding kit online.
             </p>
-            <Link href="/onboarding" className="btn-primary mt-5 !py-2.5 !text-xs">
+            <Link href="/owner-operators#onboarding" className="btn-primary mt-5 !py-2.5 !text-xs">
               Start the Onboarding Kit Now
             </Link>
           </>

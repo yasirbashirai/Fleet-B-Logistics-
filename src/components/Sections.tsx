@@ -13,7 +13,7 @@ export function PageHero({
   title,
   highlight,
   subtitle,
-  image = "/images/truck-highway.jpg",
+  image = "/images/truck-blue-highway.jpg",
   children,
 }: {
   label: string;
@@ -75,6 +75,7 @@ export function QuoteSection({
 }) {
   return (
     <section id="quote" className="relative overflow-hidden bg-navy-gradient py-20 text-white">
+      <Image src="/images/fleet-lineup.jpg" alt="" fill className="object-cover opacity-10" sizes="100vw" />
       <div className="absolute -right-20 top-0 h-full w-1/3 -skew-x-12 bg-brand-blue/10" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
         <div>
@@ -137,7 +138,7 @@ export function OwnerOperatorCTA() {
             See the Program
           </Link>
           <Link
-            href="/apply"
+            href="/owner-operators#apply"
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-brand-navy px-7 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white shadow-card transition-transform hover:scale-[1.03] md:text-base"
           >
             Apply Today <Icon name="arrow" className="h-4 w-4" />

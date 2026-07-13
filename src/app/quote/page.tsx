@@ -18,7 +18,7 @@ export default function QuotePage() {
         title="Honest Rates,"
         highlight="Fast"
         subtitle="Direct carrier pricing from our own fleet — reviewed by real dispatchers, 24/7."
-        image="/images/hero-truck.jpg"
+        image="/images/truck-blue-highway.jpg"
       />
       <CredentialStrip />
 

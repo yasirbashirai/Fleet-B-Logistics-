@@ -18,7 +18,7 @@ export default function ContactPage() {
         title="Talk to a Real Person,"
         highlight="24/7"
         subtitle="Freight quote, lease-on question, or load update — dispatch answers around the clock."
-        image="/images/truck-red.jpg"
+        image="/images/fleet-reefer-dock.jpg"
       />
 
       <section className="bg-white py-20">

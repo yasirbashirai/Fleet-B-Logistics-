@@ -18,7 +18,7 @@ export const SERVICES: Service[] = [
     short:
       "Long-haul, over-the-road freight across the Southeast and nationwide — our core service, run by experienced owner-operators.",
     hero: "Coast-to-coast over-the-road trucking with asset-based reliability and 24/7 dispatch.",
-    image: "/images/truck-highway.jpg",
+    image: "/images/truck-blue-highway.jpg",
     icon: "route",
     bullets: [
       "Full truckload (FTL) OTR freight",
@@ -41,7 +41,7 @@ export const SERVICES: Service[] = [
     short:
       "53' dry van capacity for palletized, boxed, and packaged freight — the workhorse of your supply chain.",
     hero: "Secure, weatherproof 53' dry van capacity for the Southeast and beyond.",
-    image: "/images/hero-truck.jpg",
+    image: "/images/truck-white.jpg",
     icon: "box",
     bullets: [
       "53' dry van trailers",
@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
     short:
       "When the load absolutely cannot be late — team-style planning, priority dispatch, and constant communication.",
     hero: "Time-critical freight handled with priority dispatch and real-time updates.",
-    image: "/images/truck-night.jpg",
+    image: "/images/truck-blue-reefer.jpg",
     icon: "clock",
     bullets: [
       "Priority dispatch, 24/7",
@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
     short:
       "Dense lane coverage across Florida, Georgia, and the Carolinas — fast turns and reliable capacity where we live.",
     hero: "Home-field advantage across Florida and the Southeast corridor.",
-    image: "/images/truck-red.jpg",
+    image: "/images/fleet-reefer-dock.jpg",
     icon: "map",
     bullets: [
       "Florida intrastate + Southeast lanes",
@@ -101,4 +101,18 @@ export const SERVICES: Service[] = [
     seoDescription:
       "Regional truckload carrier covering Florida, Georgia, and the Carolinas. Consistent weekly capacity on I-95, I-75, I-10 and I-4 lanes.",
   },
+];
+
+// Equipment & capacity gallery — client-provided fleet photography.
+// Shown on the Services page; capacity beyond dry van available on request
+// through our owner-operator network.
+export type Equipment = { name: string; image: string; note: string };
+
+export const EQUIPMENT: Equipment[] = [
+  { name: "53' Dry Van", image: "/images/truck-white.jpg", note: "Palletized & boxed freight — our core trailer" },
+  { name: "Refrigerated (Reefer)", image: "/images/equip-reefer.jpg", note: "Temp-controlled capacity on request" },
+  { name: "Flatbed", image: "/images/equip-flatbed.jpg", note: "Open-deck loads through our network" },
+  { name: "End Dump", image: "/images/equip-dump.jpg", note: "Aggregates & bulk material moves" },
+  { name: "Pneumatic Tank", image: "/images/equip-pneumatic.jpg", note: "Dry bulk capacity on request" },
+  { name: "Power Only", image: "/images/truck-white-road.jpg", note: "Your trailer, our tractor & driver" },
 ];

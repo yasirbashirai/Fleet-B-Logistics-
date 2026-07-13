@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/company";
 import { FMT } from "@/lib/rates";
+import { REVIEWS } from "@/data/reviews";
 import { Icon } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 import { PageHero, MetricsBand, QuoteSection, OwnerOperatorCTA } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "About Us — Asset-Based Florida Carrier Built on Honesty",
+  title: "About Us & Reviews — Asset-Based Florida Carrier Built on Honesty",
   description: `${COMPANY.name}: 100% owner-operated OTR trucking company in West Palm Beach, FL. USDOT #${COMPANY.usdot}. Our story, our values, and the ${FMT.pool} share pool that makes us different.`,
 };
 
@@ -43,7 +44,7 @@ export default function AboutPage() {
         title="An Asset-Based Carrier Built on"
         highlight="Honesty"
         subtitle={`${COMPANY.name} is a 100% owner-operated OTR trucking company headquartered in West Palm Beach, Florida — moving freight across the Southeast and all 48 states.`}
-        image="/images/driver-cab.jpg"
+        image="/images/truck-white-road.jpg"
       />
 
       {/* Story */}
@@ -78,7 +79,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="overflow-hidden rounded-2xl shadow-card">
                 <Image
-                  src="/images/truck-red.jpg"
+                  src="/images/truck-blue-reefer.jpg"
                   alt="Fleet B Logistics tractor-trailer"
                   width={800}
                   height={500}
@@ -173,6 +174,54 @@ export default function AboutPage() {
               </ul>
               <Link href="/contact" className="btn-secondary mt-8">Talk to Our Team</Link>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="scroll-mt-32 bg-slate-50 py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <Reveal className="text-center">
+            <p className="section-label">Reviews</p>
+            <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase text-brand-navy md:text-4xl">
+              Judged by the People We <span className="hl-red">Serve</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+              Shippers on our lanes and owner-operators on our fleet — in their own words.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {REVIEWS.map((r, i) => (
+              <Reveal key={r.name} delay={(i % 3) * 90}>
+                <figure className="flex h-full flex-col rounded-lg bg-white p-7 shadow-card">
+                  <div className="flex gap-1 text-amber-400">
+                    {Array.from({ length: r.rating }).map((_, j) => (
+                      <Icon key={j} name="star" className="h-4 w-4" />
+                    ))}
+                  </div>
+                  <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">“{r.text}”</blockquote>
+                  <figcaption className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-4">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-navy font-heading text-sm font-extrabold text-white">
+                      {r.name.charAt(0)}
+                    </span>
+                    <div>
+                      <p className="font-heading text-sm font-extrabold uppercase text-brand-navy">{r.name}</p>
+                      <p className="text-xs text-slate-400">{r.role}</p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-10 text-center">
+            <a
+              href={COMPANY.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Review Us on Facebook
+            </a>
           </Reveal>
         </div>
       </section>

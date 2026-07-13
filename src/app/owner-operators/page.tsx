@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { COMPANY } from "@/lib/company";
 import { FMT, RATES } from "@/lib/rates";
+import { BLOG_POSTS } from "@/data/blog";
 import { Icon } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 import PoolCalculator from "@/components/PoolCalculator";
+import Accordion from "@/components/Accordion";
+import ApplyForm from "./ApplyForm";
+import OnboardingWizard from "./OnboardingWizard";
 import { PageHero, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: `Owner-Operators — ${FMT.pool} Share Pool Program | Lease On in Florida`,
-  description: `Lease on with ${COMPANY.shortName}: keep ${FMT.split} of gross, ${FMT.settlement} settlements, no forced dispatch, fuel discounts — and ${FMT.pool} of company net revenue after ${FMT.poolYears}. Apply today.`,
+  title: `Owner-Operators — ${FMT.pool} Share Pool Program, Apply & Onboard Online`,
+  description: `Lease on with ${COMPANY.shortName}: keep ${FMT.split} of gross, ${FMT.settlement} settlements, no forced dispatch — and ${FMT.pool} of company net revenue after ${FMT.poolYears}. Apply, fill out, and sign the onboarding kit online.`,
 };
 
 const BENEFITS = [
@@ -79,7 +82,24 @@ const POOL_RULES = [
   },
 ];
 
+const DOWNLOADS = [
+  {
+    title: "Owner-Operator Onboarding Kit (Full PDF)",
+    desc: "Every form in one packet: FMCSA driver application, drug-testing consent, equipment lease agreement, direct deposit, NDA, and Addendums A–C. Print, sign, and email back — or use the online version above.",
+    href: "/documents/fbl-owner-operator-onboarding-kit.pdf",
+    tag: "Onboarding",
+  },
+  {
+    title: "Lease Termination & Equipment Return Checklist",
+    desc: "The official checklist used when a lease ends: ELD and dashcam hardware return, fuel card deactivation, IFTA decal removal, safety sign-off, and the escrow final release statement.",
+    href: "/documents/fbl-lease-termination-equipment-return-checklist.pdf",
+    tag: "Offboarding",
+  },
+];
+
 export default function OwnerOperatorsPage() {
+  const faqPosts = BLOG_POSTS.filter((p) => p.category === "Owner-Operators");
+
   return (
     <>
       {/* Hero — the recruiting flyer, as a webpage */}
@@ -88,13 +108,13 @@ export default function OwnerOperatorsPage() {
         title="Drive Your Success."
         highlight="Share Our Growth."
         subtitle={`Partner with us & earn your place in our exclusive revenue share pool — ${FMT.pool} of company net revenue after ${FMT.poolYears} of service.`}
-        image="/images/truck-night.jpg"
+        image="/images/truck-blue-reefer.jpg"
       >
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Link href="/apply" className="btn-primary">
+          <a href="#apply" className="btn-primary">
             Apply Today <Icon name="arrow" className="h-4 w-4" />
-          </Link>
-          <Link href="/onboarding" className="btn-outline">Fill Out the Onboarding Kit</Link>
+          </a>
+          <a href="#onboarding" className="btn-outline">Fill Out the Onboarding Kit</a>
         </div>
         <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-xs font-bold uppercase tracking-wider text-white/75">
           <span className="flex items-center gap-2"><Icon name="check" className="h-4 w-4 text-brand-red" /> {FMT.split} of Gross</span>
@@ -105,8 +125,27 @@ export default function OwnerOperatorsPage() {
       </PageHero>
       <CredentialStrip />
 
+      {/* Quick anchor nav */}
+      <div className="sticky top-[104px] z-30 border-b border-slate-200 bg-white/95 backdrop-blur md:top-[112px]">
+        <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2 text-xs font-bold uppercase tracking-wider">
+          {[
+            ["#program", "The Program"],
+            ["#calculator", "Your Numbers"],
+            ["#pool-rules", "Pool Rules"],
+            ["#apply", "Apply"],
+            ["#onboarding", "Onboarding Kit"],
+            ["#resources", "Downloads"],
+            ["#faq", "FAQ"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="whitespace-nowrap rounded-full px-4 py-2 text-slate-500 transition hover:bg-brand-red hover:text-white">
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+
       {/* Core benefits + qualifications box (flyer layout) */}
-      <section className="bg-white py-20">
+      <section id="program" className="scroll-mt-44 bg-white py-20">
         <div className="mx-auto max-w-7xl px-4">
           <Reveal>
             <p className="section-label">The Core Benefits</p>
@@ -133,7 +172,7 @@ export default function OwnerOperatorsPage() {
 
             {/* Qualifications box — straight from the flyer */}
             <Reveal delay={200}>
-              <div className="sticky top-32 overflow-hidden rounded-xl bg-navy-gradient text-white shadow-card">
+              <div className="sticky top-44 overflow-hidden rounded-xl bg-navy-gradient text-white shadow-card">
                 <div className="bg-brand-red px-6 py-4">
                   <h3 className="font-heading text-lg font-extrabold uppercase">Qualifications Box</h3>
                   <p className="text-xs font-bold uppercase tracking-widest text-white/80">Who we&apos;re looking for</p>
@@ -155,7 +194,7 @@ export default function OwnerOperatorsPage() {
                       Net Revenue Share<br />After {RATES.revenuePool.qualifyingYears} Years of Service
                     </p>
                   </div>
-                  <Link href="/apply" className="btn-primary mt-6 w-full">Apply Today</Link>
+                  <a href="#apply" className="btn-primary mt-6 w-full">Apply Today</a>
                 </div>
               </div>
             </Reveal>
@@ -164,7 +203,7 @@ export default function OwnerOperatorsPage() {
       </section>
 
       {/* Calculator */}
-      <section className="bg-slate-50 py-20">
+      <section id="calculator" className="scroll-mt-44 bg-slate-50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
           <Reveal>
             <p className="section-label">Do the Math</p>
@@ -198,7 +237,7 @@ export default function OwnerOperatorsPage() {
       </section>
 
       {/* Pool rules — transparency section */}
-      <section className="bg-brand-navy py-20 text-white">
+      <section id="pool-rules" className="scroll-mt-44 bg-brand-navy py-20 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <Reveal className="text-center">
             <p className="section-label">Full Transparency</p>
@@ -238,8 +277,8 @@ export default function OwnerOperatorsPage() {
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-4">
             {[
-              { n: "1", t: "Apply Online", d: "5-minute form. Your welcome letter + onboarding kit link arrive by email instantly." },
-              { n: "2", t: "Sign the Kit", d: "Complete the full onboarding kit online — or download the PDF and email it back." },
+              { n: "1", t: "Apply Below", d: "5-minute form. Your welcome letter + onboarding kit link arrive by email instantly." },
+              { n: "2", t: "Sign the Kit", d: "Complete the full onboarding kit online right on this page — or download the PDF." },
               { n: "3", t: "Inspection", d: "Bring your truck to our West Palm Beach HQ (schedule 24h ahead) with your documents." },
               { n: "4", t: "Roll", d: "Safety clears your file, ELD gets synced, and dispatch puts you on your first load." },
             ].map((s, i) => (
@@ -254,11 +293,176 @@ export default function OwnerOperatorsPage() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-12 text-center">
-            <div className="inline-flex flex-col items-center gap-4 sm:flex-row">
-              <Link href="/apply" className="btn-primary">Ready? Apply Today</Link>
-              <Link href="/resources" className="btn-secondary">Download Forms & Kit</Link>
+        </div>
+      </section>
+
+      {/* ============ APPLY ============ */}
+      <section id="apply" className="scroll-mt-44 bg-slate-50 py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-5">
+          <Reveal className="lg:col-span-3">
+            <div className="rounded-xl bg-white p-6 shadow-card md:p-9">
+              <p className="section-label">Step 1</p>
+              <h2 className="mt-2 font-heading text-2xl font-extrabold uppercase text-brand-navy">Owner-Operator Application</h2>
+              <p className="mb-6 mt-1 text-sm text-slate-500">
+                Quick pre-qualification — the full FMCSA application is in the onboarding kit below.
+              </p>
+              <ApplyForm />
             </div>
+          </Reveal>
+          <div className="space-y-6 lg:col-span-2">
+            <Reveal delay={80}>
+              <div className="rounded-xl border-2 border-dashed border-brand-blue/40 bg-white p-7">
+                <h3 className="font-heading text-base font-extrabold uppercase text-brand-navy">
+                  📬 Instant welcome packet
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  Submit this form and our system automatically emails you the official FBL welcome letter, your next
+                  steps, and the link back to the onboarding kit below.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={140}>
+              <div className="rounded-xl bg-red-gradient p-7 text-center text-white shadow-card-red">
+                <p className="font-heading text-base font-extrabold uppercase">Questions first?</p>
+                <a href={COMPANY.phoneHref} className="mt-2 inline-block font-heading text-2xl font-extrabold">
+                  {COMPANY.phone}
+                </a>
+                <p className="mt-1 text-xs uppercase tracking-widest text-white/80">Recruiting & Safety — 24/7</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ONBOARDING KIT ============ */}
+      <section id="onboarding" className="scroll-mt-44 bg-white py-20">
+        <div className="mx-auto max-w-4xl px-4">
+          <Reveal className="text-center">
+            <p className="section-label">Step 2</p>
+            <h2 className="mt-2 font-heading text-3xl font-extrabold uppercase text-brand-navy md:text-4xl">
+              Fill Out & Sign Your Kit <span className="hl-red">Online</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+              Every form from the official FBL onboarding kit in one guided flow — complete it in one sitting, or{" "}
+              <a href="/documents/fbl-owner-operator-onboarding-kit.pdf" download className="font-bold text-brand-blue underline">
+                download the PDF version
+              </a>{" "}
+              instead.
+            </p>
+          </Reveal>
+          <Reveal className="mt-10">
+            <OnboardingWizard />
+          </Reveal>
+          <p className="mt-8 text-center text-xs leading-relaxed text-slate-400">
+            Electronic signatures on this kit are intended to carry the same force as handwritten signatures under the
+            U.S. E-SIGN Act. Original hard copies may still be requested by Safety and can be mailed to{" "}
+            {COMPANY.address.full}. Questions? Call {COMPANY.phone} — 24/7.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ RESOURCES / DOWNLOADS ============ */}
+      <section id="resources" className="scroll-mt-44 bg-slate-50 py-20">
+        <div className="mx-auto max-w-5xl px-4">
+          <Reveal>
+            <p className="section-label">Driver Resources</p>
+            <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase text-brand-navy md:text-4xl">
+              Forms & <span className="hl-blue">Downloads</span>
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {DOWNLOADS.map((d, i) => (
+              <Reveal key={d.href} delay={i * 100}>
+                <div className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-7 shadow-card">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-red text-white shadow-card-red">
+                      <Icon name="doc" className="h-6 w-6" />
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-500">
+                      {d.tag}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-heading text-lg font-extrabold uppercase leading-snug text-brand-navy">
+                    {d.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{d.desc}</p>
+                  <a href={d.href} download className="btn-secondary mt-6 !py-2.5 !text-xs">
+                    <Icon name="download" className="h-4 w-4" /> Download PDF
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Submission instructions */}
+          <Reveal className="mt-10">
+            <div className="rounded-xl bg-white p-8 shadow-card">
+              <h3 className="font-heading text-xl font-extrabold uppercase text-brand-navy">
+                Submission & Paperwork Instructions
+              </h3>
+              <div className="mt-6 grid gap-8 md:grid-cols-3">
+                <div>
+                  <p className="font-heading text-sm font-extrabold uppercase text-brand-red">📍 Mail & Inspections</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Original hard copies and physical truck inspections happen at our operational HQ:
+                    <br />
+                    <strong className="text-brand-navy">{COMPANY.address.full}</strong>
+                    <br />
+                    Schedule inspections 24h ahead: <a href={COMPANY.phoneHref} className="font-bold text-brand-red">{COMPANY.phone}</a>
+                  </p>
+                </div>
+                <div>
+                  <p className="font-heading text-sm font-extrabold uppercase text-brand-red">📱 ELD Setup</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Download your assigned ELD app (Motive, Samsara, or HOS247 per your fleet setup). Safety emails
+                    your driver credentials once Phase 1 paperwork clears. Plug in the hardware, sync via Bluetooth,
+                    and you&apos;re dispatch-ready.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-heading text-sm font-extrabold uppercase text-brand-red">📄 BOL & Getting Paid</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Scan signed BOLs, lumper and fuel receipts with a mobile scanning app and email to{" "}
+                    <a href={COMPANY.emailHref} className="font-bold text-brand-blue">{COMPANY.email}</a> within{" "}
+                    {RATES.bolSubmitHours} hours of delivery — settlements process within {FMT.settlement}.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ FAQ / insights from the blog ============ */}
+      <section id="faq" className="scroll-mt-44 bg-white py-20">
+        <div className="mx-auto max-w-4xl px-4">
+          <Reveal>
+            <p className="section-label">Straight Talk</p>
+            <h2 className="mt-3 font-heading text-2xl font-extrabold uppercase text-brand-navy md:text-3xl">
+              Owner-Operator <span className="hl-red">FAQ</span> & Insights
+            </h2>
+          </Reveal>
+          <Reveal className="mt-8">
+            <Accordion
+              items={faqPosts.map((p) => ({
+                title: p.title,
+                content: (
+                  <>
+                    <p className="font-semibold text-slate-700">{p.excerpt}</p>
+                    {p.body.map((sec, i) => (
+                      <div key={i} className="space-y-3">
+                        {sec.heading && (
+                          <p className="font-heading font-extrabold uppercase text-brand-navy">{sec.heading}</p>
+                        )}
+                        {sec.paragraphs.map((para, j) => (
+                          <p key={j}>{para}</p>
+                        ))}
+                      </div>
+                    ))}
+                  </>
+                ),
+              }))}
+            />
           </Reveal>
         </div>
       </section>
@@ -273,12 +477,12 @@ export default function OwnerOperatorsPage() {
             Apply today to join our profit-sharing pool!
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/apply"
+            <a
+              href="#apply"
               className="inline-flex items-center gap-2 rounded-md bg-brand-navy px-8 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white shadow-card transition-transform hover:scale-[1.03] md:text-base"
             >
               Apply Now <Icon name="arrow" className="h-4 w-4" />
-            </Link>
+            </a>
             <a href={COMPANY.phoneHref} className="btn-outline">
               <Icon name="phone" className="h-4 w-4" /> {COMPANY.phone}
             </a>

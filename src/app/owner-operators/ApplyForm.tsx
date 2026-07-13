@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 export default function ApplyForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -33,7 +32,7 @@ export default function ApplyForm() {
           <strong>Check your email</strong> — your official FBL welcome letter is on its way with your next steps.
           You can start the onboarding kit right now:
         </p>
-        <Link href="/onboarding" className="btn-primary mt-6">Fill Out & Sign the Kit Online →</Link>
+        <a href="#onboarding" className="btn-primary mt-6">Fill Out &amp; Sign the Kit Online →</a>
         <p className="mt-4 text-xs text-emerald-700">
           Prefer paper? <a href="/documents/fbl-owner-operator-onboarding-kit.pdf" className="underline">Download the PDF kit</a> and email it back.
         </p>
