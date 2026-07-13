@@ -12,8 +12,8 @@ import Reveal from "@/components/Reveal";
 import { MetricsBand, QuoteSection, OwnerOperatorCTA, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.shortName} — Asset-Based OTR Trucking Company in West Palm Beach, FL`,
-  description: `${COMPANY.description} Call ${COMPANY.phone} — dispatch 24/7.`,
+  title: `${COMPANY.shortName}, Asset-Based OTR Trucking Company in West Palm Beach, FL`,
+  description: `${COMPANY.description} Call ${COMPANY.phone}, dispatch 24/7.`,
 };
 
 const WHY = [
@@ -25,7 +25,7 @@ const WHY = [
   {
     icon: "truck",
     title: "100% Owner-Operated Fleet",
-    text: "Every truck is driven by an owner with skin in the game — accountability no hourly fleet can match.",
+    text: "Every truck is driven by an owner with skin in the game, accountability no hourly fleet can match.",
   },
   {
     icon: "dollar",
@@ -40,7 +40,7 @@ const WHY = [
   {
     icon: "badge",
     title: "Asset-Based Authority",
-    text: `USDOT #${COMPANY.usdot} · MC #${COMPANY.mc}. We commit our own equipment — not promises shopped on a load board.`,
+    text: `USDOT #${COMPANY.usdot} · MC #${COMPANY.mc}. We commit our own equipment, not promises shopped on a load board.`,
   },
   {
     icon: "eye",
@@ -51,7 +51,7 @@ const WHY = [
 
 const STEPS = [
   { n: "01", title: "Request Your Quote", text: "60-second form or one call to 24/7 dispatch. Real numbers, fast." },
-  { n: "02", title: "We Assign the Truck", text: "An owner-operator from our own fleet is committed to your load — no reselling." },
+  { n: "02", title: "We Assign the Truck", text: "An owner-operator from our own fleet is committed to your load, no reselling." },
   { n: "03", title: "Track to Delivery", text: "Proactive check calls and ELD tracking from pickup to signed POD." },
   { n: "04", title: "Clean Paperwork", text: "POD and invoicing within 24 hours. Your freight file, closed clean." },
 ];
@@ -59,7 +59,7 @@ const STEPS = [
 export default function HomePage() {
   return (
     <>
-      {/* ============ HERO — flyer-style ============ */}
+      {/* ============ HERO, flyer-style ============ */}
       <section className="relative overflow-hidden bg-brand-navy text-white">
         <Image
           src="/images/truck-blue-highway.jpg"
@@ -84,7 +84,7 @@ export default function HomePage() {
             With <span className="hl-red">FBL</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">
-            Over-the-road freight moved by a <strong>100% owner-operated</strong> fleet — with 24/7 dispatch,
+            Over-the-road freight moved by a <strong>100% owner-operated</strong> fleet, with 24/7 dispatch,
             transparent pricing, and delivery discipline your supply chain can build on.
           </p>
           <p className="mt-3 font-heading text-sm font-bold uppercase tracking-widest text-brand-blueLight">
@@ -112,7 +112,7 @@ export default function HomePage() {
 
       <CredentialStrip />
 
-      {/* ============ SERVICES — dark band like the flyer ============ */}
+      {/* ============ SERVICES, dark band like the flyer ============ */}
       <section className="bg-brand-navy py-20 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <Reveal>
@@ -157,7 +157,7 @@ export default function HomePage() {
 
       <MetricsBand />
 
-      {/* ============ WHY PARTNER — blue gradient panel like the flyer ============ */}
+      {/* ============ WHY PARTNER, blue gradient panel like the flyer ============ */}
       <section className="relative overflow-hidden bg-blue-gradient py-20 text-white">
         <div className="absolute -left-16 top-0 h-full w-48 -skew-x-12 bg-white/5" />
         <div className="relative mx-auto max-w-7xl px-4">
@@ -194,19 +194,19 @@ export default function HomePage() {
               <span className="hl-red">Share Our Growth.</span>
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
-              We&apos;re not hiring drivers — we&apos;re building partners. Lease on with FBL, keep{" "}
+              We&apos;re not hiring drivers, we&apos;re building partners. Lease on with FBL, keep{" "}
               <strong className="text-brand-navy">{FMT.split} of gross revenue</strong>, get settled in{" "}
               <strong className="text-brand-navy">{FMT.settlement}</strong>, and after {FMT.poolYears} of service,
               earn your seat in our exclusive pool sharing{" "}
-              <strong className="text-brand-red">{FMT.pool} of company net revenue — every month.</strong>
+              <strong className="text-brand-red">{FMT.pool} of company net revenue, every month.</strong>
             </p>
             <ul className="mt-7 space-y-3.5">
               {[
-                `Exclusive pool access — ${FMT.pool} of net revenue after ${FMT.poolYears}`,
-                "Operational freedom — run your routes, no forced dispatch",
+                `Exclusive pool access, ${FMT.pool} of net revenue after ${FMT.poolYears}`,
+                "Operational freedom, run your routes, no forced dispatch",
                 "Consistent freight from a strong, growing network",
                 "Heavy fleet fuel discount programs",
-                "Total transparency — full company audit rights",
+                "Total transparency, full company audit rights",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-3 text-sm font-semibold text-slate-700">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red">
@@ -222,7 +222,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          {/* 20% seal card — the flyer's badge, rebuilt in brand colors */}
+          {/* 20% seal card, the flyer's badge, rebuilt in brand colors */}
           <Reveal delay={150}>
             <div className="relative overflow-hidden rounded-2xl bg-navy-gradient p-8 text-white shadow-card md:p-10">
               <div className="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand-red/20 blur-2xl" />
@@ -237,7 +237,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 rounded-lg bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
                 <p className="font-heading text-xs font-bold uppercase tracking-widest text-brand-blueLight">
-                  Qualifications Box — Who We&apos;re Looking For
+                  Qualifications Box, Who We&apos;re Looking For
                 </p>
                 <ul className="mt-3 space-y-2 text-sm font-semibold">
                   {[

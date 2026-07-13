@@ -68,7 +68,7 @@ export function MetricsBand() {
 /* ---------- Quote form section (used on every major page) ---------- */
 export function QuoteSection({
   title = "Get an Instant Freight Quote",
-  sub = "Tell us about your load — our 24/7 dispatch team responds fast, with honest numbers.",
+  sub = "Tell us about your load, our 24/7 dispatch team responds fast, with honest numbers.",
 }: {
   title?: string;
   sub?: string;
@@ -86,7 +86,7 @@ export function QuoteSection({
           <p className="mt-4 max-w-md text-white/75">{sub}</p>
           <ul className="mt-8 space-y-4">
             {[
-              "Direct carrier rates — no broker margin stacking",
+              "Direct carrier rates, no broker margin stacking",
               "Asset-based: we quote trucks we actually control",
               "24/7 response from real dispatchers",
               "Transparent, itemized pricing",
@@ -129,7 +129,7 @@ export function OwnerOperatorCTA() {
             Owner-Operators: Drive Your Success. <span className="text-brand-navy">Share Our Growth.</span>
           </h2>
           <p className="mt-3 max-w-2xl text-white/90">
-            Earn your place in our exclusive revenue share pool — {FMT.pool} of company net revenue after{" "}
+            Earn your place in our exclusive revenue share pool, {FMT.pool} of company net revenue after{" "}
             {FMT.poolYears} of service. Keep {FMT.split} of gross on every load, paid in {FMT.settlement}.
           </p>
         </div>
@@ -154,7 +154,7 @@ export function CredentialStrip() {
   const items = [
     { icon: "badge", text: `USDOT #${COMPANY.usdot}` },
     { icon: "doc", text: `MC #${COMPANY.mc}` },
-    { icon: "shield", text: "Fully Insured — Liability & Cargo" },
+    { icon: "shield", text: "Fully Insured, Liability & Cargo" },
     { icon: "wheel", text: "FMCSA / ELD Compliant" },
     { icon: "clock", text: "24/7 Dispatch" },
   ];

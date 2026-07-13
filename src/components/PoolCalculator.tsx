@@ -4,7 +4,7 @@ import { useState } from "react";
 import { RATES } from "@/lib/rates";
 
 // Interactive earnings estimator for the owner-operator funnel.
-// Illustrative math only — all program values come from lib/rates.ts.
+// Illustrative math only, all program values come from lib/rates.ts.
 export default function PoolCalculator() {
   const [grossPerWeek, setGrossPerWeek] = useState(6000);
 
@@ -21,7 +21,7 @@ export default function PoolCalculator() {
         Estimate Your Settlement
       </h3>
       <p className="mt-1 text-sm text-slate-500">
-        Drag to your average weekly gross — see what the {RATES.grossRevenueSplit}% split means in real money.
+        Drag to your average weekly gross, see what the {RATES.grossRevenueSplit}% split means in real money.
       </p>
 
       <div className="mt-6">
@@ -69,7 +69,7 @@ export default function PoolCalculator() {
       <div className="mt-4 rounded-lg border-2 border-dashed border-brand-blue/40 bg-brand-blue/5 p-4 text-center">
         <p className="text-sm font-semibold text-brand-navy">
           <span className="font-heading font-extrabold text-brand-blue">+ Year {RATES.revenuePool.qualifyingYears}:</span>{" "}
-          qualify for the {RATES.revenuePool.percent}% net revenue share pool — paid monthly, on top of everything above.
+          qualify for the {RATES.revenuePool.percent}% net revenue share pool, paid monthly, on top of everything above.
         </p>
       </div>
 

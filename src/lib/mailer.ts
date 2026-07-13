@@ -3,7 +3,7 @@ import { COMPANY, SITE_URL } from "./company";
 import { RATES } from "./rates";
 
 // SMTP config via env vars (see .env.example). If SMTP is not configured,
-// submissions are logged to the server console instead of failing —
+// submissions are logged to the server console instead of failing,
 // set the env vars in production to activate real email delivery.
 function getTransport() {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
@@ -22,7 +22,7 @@ const NOTIFY_TO = () => process.env.NOTIFY_EMAIL || COMPANY.email;
 export async function sendMail(opts: { to: string; subject: string; html: string; replyTo?: string }) {
   const transport = getTransport();
   if (!transport) {
-    console.log("[FBL mailer] SMTP not configured — would have sent:", {
+    console.log("[FBL mailer] SMTP not configured, would have sent:", {
       to: opts.to,
       subject: opts.subject,
     });
@@ -47,7 +47,7 @@ function shell(title: string, inner: string) {
         ${inner}
       </div>
       <div style="background:#101c2e;color:#94a3b8;padding:18px 28px;font-size:12px;line-height:1.6;">
-        <strong style="color:#ffffff;">${COMPANY.name}</strong> — “${COMPANY.tagline}”<br/>
+        <strong style="color:#ffffff;">${COMPANY.name}</strong>, “${COMPANY.tagline}”<br/>
         ${COMPANY.address.full}<br/>
         ${COMPANY.phone} · ${COMPANY.email} · USDOT #${COMPANY.usdot} · MC #${COMPANY.mc}
       </div>
@@ -73,7 +73,7 @@ function rows(data: Record<string, unknown>) {
 export async function notifyCompany(kind: string, data: Record<string, unknown>) {
   return sendMail({
     to: NOTIFY_TO(),
-    subject: `🚛 New ${kind} — ${COMPANY.abbr} website`,
+    subject: `🚛 New ${kind}, ${COMPANY.abbr} website`,
     replyTo: typeof data.email === "string" ? data.email : undefined,
     html: shell(
       `New ${kind} from the website`,
@@ -90,7 +90,7 @@ export async function sendWelcomeLetter(to: string, firstName: string) {
   const pdfUrl = `${SITE_URL}/documents/fbl-owner-operator-onboarding-kit.pdf`;
   return sendMail({
     to,
-    subject: `Welcome to Fleet B Logistics — Your Onboarding Kit Inside 🚛`,
+    subject: `Welcome to Fleet B Logistics, Your Onboarding Kit Inside 🚛`,
     html: shell(
       `Welcome to Fleet B Logistics!`,
       `
@@ -100,21 +100,21 @@ export async function sendWelcomeLetter(to: string, firstName: string) {
       operational independence, and total back-office transparency.</p>
       <p>As a valued partner on our fleet, you can count on us to keep your wheels turning and your revenue growing.
       We take pride in our rapid payment structure, processing your settlements within
-      <strong>${RATES.settlementDays} business days</strong> of receiving your delivery paperwork — and you keep
+      <strong>${RATES.settlementDays} business days</strong> of receiving your delivery paperwork, and you keep
       <strong>${RATES.grossRevenueSplit}% of gross freight revenue</strong> on every load.</p>
       <p>We are fully committed to long-term success together: we look forward to working with you toward your
       <strong>${RATES.revenuePool.qualifyingYears}-year milestone</strong>, where you will gain exclusive entry into our
       <strong>${RATES.revenuePool.percent}% monthly net revenue share pool</strong>.</p>
 
       <div style="background:#f8fafc;border:2px dashed #29689a;border-radius:8px;padding:18px 22px;margin:22px 0;">
-        <p style="margin:0 0 10px;font-weight:800;color:#101c2e;font-size:15px;">📋 What happens next — your onboarding process:</p>
+        <p style="margin:0 0 10px;font-weight:800;color:#101c2e;font-size:15px;">📋 What happens next, your onboarding process:</p>
         <ol style="margin:0;padding-left:20px;">
-          <li><strong>Complete the Onboarding Kit</strong> — fill it out and sign online here:<br/>
+          <li><strong>Complete the Onboarding Kit</strong>, fill it out and sign online here:<br/>
             <a href="${kitUrl}" style="color:#ed1d26;font-weight:700;">${kitUrl}</a><br/>
             (or download the PDF: <a href="${pdfUrl}" style="color:#29689a;">Owner-Operator Onboarding Kit</a>)</li>
-          <li><strong>Gather your documents</strong> — CDL-A, DOT medical card, truck registration, Form 2290, annual inspection, and insurance certificate.</li>
-          <li><strong>Schedule your truck inspection</strong> at our West Palm Beach HQ — call Safety at ${COMPANY.phone} at least 24 hours ahead.</li>
-          <li><strong>First dispatch</strong> — once Safety clears your file, you're rolling.</li>
+          <li><strong>Gather your documents</strong>, CDL-A, DOT medical card, truck registration, Form 2290, annual inspection, and insurance certificate.</li>
+          <li><strong>Schedule your truck inspection</strong> at our West Palm Beach HQ, call Safety at ${COMPANY.phone} at least 24 hours ahead.</li>
+          <li><strong>First dispatch</strong>, once Safety clears your file, you're rolling.</li>
         </ol>
       </div>
 
@@ -122,7 +122,7 @@ export async function sendWelcomeLetter(to: string, firstName: string) {
         <a href="${kitUrl}" style="background:#ed1d26;color:#ffffff;font-weight:800;text-decoration:none;padding:14px 30px;border-radius:6px;display:inline-block;">FILL OUT & SIGN THE KIT ONLINE →</a>
       </p>
 
-      <p>Welcome aboard — let's achieve massive success together!</p>
+      <p>Welcome aboard, let's achieve massive success together!</p>
       <p>Sincerely,<br/><strong>${COMPANY.owner.name}</strong><br/>${COMPANY.owner.title}<br/>${COMPANY.name}</p>
       `
     ),

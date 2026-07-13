@@ -12,9 +12,9 @@ import Accordion from "@/components/Accordion";
 import { PageHero, QuoteSection, OwnerOperatorCTA, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "Trucking & Freight Services — OTR, Dry Van, Expedited, Regional",
+  title: "Trucking & Freight Services, OTR, Dry Van, Expedited, Regional",
   description:
-    "Fleet B Logistics services: OTR transportation, dry van freight, expedited time-critical loads, and Southeast regional trucking — plus the industries and areas we serve. West Palm Beach, FL.",
+    "Fleet B Logistics services: OTR transportation, dry van freight, expedited time-critical loads, and Southeast regional trucking, plus the industries and areas we serve. West Palm Beach, FL.",
 };
 
 export default function ServicesPage() {
@@ -101,7 +101,7 @@ export default function ServicesPage() {
               The Right <span className="hl-red">Trailer</span> for the Load
             </h2>
             <p className="mt-4 max-w-2xl text-white/70">
-              Dry van is our backbone — and through our owner-operator network we cover specialized capacity on
+              Dry van is our backbone, and through our owner-operator network we cover specialized capacity on
               request. Ask dispatch what&apos;s available on your lane.
             </p>
           </Reveal>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
               Florida Roots. <span className="hl-blue">48-State</span> Reach.
             </h2>
             <p className="mt-4 max-w-2xl text-slate-600">
-              Headquartered in West Palm Beach with dense Southeast coverage — and OTR lanes into all 48 contiguous
+              Headquartered in West Palm Beach with dense Southeast coverage, and OTR lanes into all 48 contiguous
               states.
             </p>
           </Reveal>

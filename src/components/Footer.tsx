@@ -18,7 +18,7 @@ export default function Footer() {
             <Image src="/images/fbl-logo.png" alt={`${COMPANY.name} logo`} width={140} height={80} className="h-14 w-auto" />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-white/70">
-            {COMPANY.name} — asset-based, 100% owner-operated OTR trucking company in West Palm Beach, Florida.
+            {COMPANY.name}, asset-based, 100% owner-operated OTR trucking company in West Palm Beach, Florida.
           </p>
           <p className="mt-3 font-heading text-sm font-bold uppercase tracking-wider text-brand-redLight">
             “{COMPANY.tagline}”
@@ -98,7 +98,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Icon name="clock" className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-              <span>Open 24/7 — dispatch & support</span>
+              <span>Open 24/7, dispatch & support</span>
             </li>
           </ul>
           <Link href="/contact" className="btn-primary mt-6 w-full">Contact Us</Link>

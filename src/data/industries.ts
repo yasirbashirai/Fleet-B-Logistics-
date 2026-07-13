@@ -18,7 +18,7 @@ export const INDUSTRIES: Industry[] = [
     short: "On-time DC deliveries, appointment discipline, and OTIF-friendly performance.",
     intro: [
       "Retail freight lives and dies by the appointment. Missed delivery windows mean chargebacks, OTIF penalties, and empty shelves. FLEET B LOGISTICS runs retail and distribution freight with the appointment discipline big-box receivers demand.",
-      "Our owner-operators arrive checked in, on time, and with clean paperwork — because their own revenue depends on it.",
+      "Our owner-operators arrive checked in, on time, and with clean paperwork, because their own revenue depends on it.",
     ],
     needs: [
       "Strict delivery appointment compliance",
@@ -38,7 +38,7 @@ export const INDUSTRIES: Industry[] = [
     short: "Inbound raw materials and outbound finished goods that keep production lines moving.",
     intro: [
       "A stopped production line burns money by the minute. Manufacturers count on FLEET B LOGISTICS for dependable inbound raw material deliveries and outbound finished-goods distribution across the Southeast.",
-      "We coordinate directly with plant shipping offices, honor dock schedules, and communicate proactively when conditions change — no surprises.",
+      "We coordinate directly with plant shipping offices, honor dock schedules, and communicate proactively when conditions change, no surprises.",
     ],
     needs: [
       "Reliable inbound JIT deliveries",
@@ -66,7 +66,7 @@ export const INDUSTRIES: Industry[] = [
       "Full documentation and traceability",
     ],
     image: "/images/hero-truck.jpg",
-    seoTitle: "Food & Beverage Trucking — Food-Grade Dry Van | Fleet B Logistics",
+    seoTitle: "Food & Beverage Trucking, Food-Grade Dry Van | Fleet B Logistics",
     seoDescription:
       "Food-grade dry van carrier serving food & beverage shippers in Florida and the Southeast. Clean equipment, reliable delivery windows.",
   },
@@ -76,7 +76,7 @@ export const INDUSTRIES: Industry[] = [
     headline: "Building Materials & Construction Freight",
     short: "Palletized building products delivered to yards, stores, and staging sites on schedule.",
     intro: [
-      "Florida builds year-round, and construction supply chains need carriers who deliver on schedule — because crews, cranes, and concrete don't wait. We haul palletized building materials, fixtures, and supplies to distribution yards and job-site staging across the region.",
+      "Florida builds year-round, and construction supply chains need carriers who deliver on schedule, because crews, cranes, and concrete don't wait. We haul palletized building materials, fixtures, and supplies to distribution yards and job-site staging across the region.",
     ],
     needs: [
       "On-schedule deliveries to yards and DCs",
@@ -95,7 +95,7 @@ export const INDUSTRIES: Industry[] = [
     headline: "E-Commerce, Fulfillment & 3PL Trucking",
     short: "Middle-mile truckload capacity connecting fulfillment centers, ports, and parcel networks.",
     intro: [
-      "E-commerce freight never sleeps — and neither does our dispatch. FLEET B LOGISTICS provides middle-mile truckload capacity for 3PLs and fulfillment operations: FC-to-FC transfers, port-to-warehouse moves, and injection runs into parcel networks.",
+      "E-commerce freight never sleeps, and neither does our dispatch. FLEET B LOGISTICS provides middle-mile truckload capacity for 3PLs and fulfillment operations: FC-to-FC transfers, port-to-warehouse moves, and injection runs into parcel networks.",
       "24/7 dispatch and honest, direct communication make us an easy carrier to build automated workflows around.",
     ],
     needs: [

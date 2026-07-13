@@ -17,7 +17,7 @@ export const REGIONS: Region[] = [
     state: "Florida",
     headline: "Trucking Company in West Palm Beach, FL",
     intro: [
-      "FLEET B LOGISTICS LLC is headquartered in West Palm Beach, Florida — our trucks, our dispatch, and our safety operation live here. When you book freight out of Palm Beach County, you're working with a local asset-based carrier, not a broker reselling your load.",
+      "FLEET B LOGISTICS LLC is headquartered in West Palm Beach, Florida, our trucks, our dispatch, and our safety operation live here. When you book freight out of Palm Beach County, you're working with a local asset-based carrier, not a broker reselling your load.",
       "We serve shippers across West Palm Beach, Riviera Beach, Lake Worth, Boynton Beach, and the Port of Palm Beach corridor with OTR and regional truckload capacity, 24/7.",
     ],
     lanes: [
@@ -38,7 +38,7 @@ export const REGIONS: Region[] = [
     state: "Florida",
     headline: "Truckload Carrier Serving Miami & South Florida",
     intro: [
-      "Miami-Dade moves some of the densest freight volume in the Southeast — and FLEET B LOGISTICS covers it daily from our West Palm Beach base, under an hour up I-95.",
+      "Miami-Dade moves some of the densest freight volume in the Southeast, and FLEET B LOGISTICS covers it daily from our West Palm Beach base, under an hour up I-95.",
       "From PortMiami drayage-adjacent truckload moves to Doral and Medley distribution centers, we provide reliable FTL capacity for South Florida's import/export economy.",
     ],
     lanes: [
@@ -48,7 +48,7 @@ export const REGIONS: Region[] = [
       "Miami → Jacksonville → Northeast lanes",
     ],
     localNote: "Daily coverage of Miami-Dade, Broward, and Palm Beach counties.",
-    seoTitle: "Miami Truckload Carrier — FTL Trucking South Florida | Fleet B Logistics",
+    seoTitle: "Miami Truckload Carrier, FTL Trucking South Florida | Fleet B Logistics",
     seoDescription:
       "Full truckload carrier serving Miami and South Florida. Asset-based, 24/7 dispatch, OTR and regional lanes from a Florida trucking company.",
   },
@@ -86,7 +86,7 @@ export const REGIONS: Region[] = [
       "I-75 corridor → Midwest lanes",
     ],
     localNote: "Regular I-75 and I-4 lane coverage for Tampa Bay shippers.",
-    seoTitle: "Tampa Truckload Carrier — OTR Trucking | Fleet B Logistics",
+    seoTitle: "Tampa Truckload Carrier, OTR Trucking | Fleet B Logistics",
     seoDescription:
       "Asset-based truckload carrier serving Tampa Bay. OTR and Southeast regional freight with 24/7 dispatch from a Florida trucking company.",
   },
@@ -105,7 +105,7 @@ export const REGIONS: Region[] = [
       "I-10 West → Gulf Coast lanes",
     ],
     localNote: "Strategic position for Southeast-to-Northeast and Gulf Coast freight.",
-    seoTitle: "Jacksonville Trucking Company — FTL Carrier | Fleet B Logistics",
+    seoTitle: "Jacksonville Trucking Company, FTL Carrier | Fleet B Logistics",
     seoDescription:
       "Full truckload carrier covering Jacksonville and Northeast Florida. I-95 and I-10 lane coverage from an asset-based Florida carrier.",
   },
@@ -115,7 +115,7 @@ export const REGIONS: Region[] = [
     state: "Georgia",
     headline: "Atlanta & Georgia Truckload Lanes",
     intro: [
-      "Atlanta is the distribution heart of the Southeast, and it's one of our most-run destinations. FLEET B LOGISTICS connects Florida shippers to metro Atlanta DCs — and brings Georgia freight south — every week.",
+      "Atlanta is the distribution heart of the Southeast, and it's one of our most-run destinations. FLEET B LOGISTICS connects Florida shippers to metro Atlanta DCs, and brings Georgia freight south, every week.",
     ],
     lanes: [
       "Atlanta → South Florida",
@@ -132,7 +132,7 @@ export const REGIONS: Region[] = [
     slug: "southeast-us",
     name: "Southeast US",
     state: "Regional",
-    headline: "Southeast Regional Trucking — FL · GA · SC · NC · AL · TN",
+    headline: "Southeast Regional Trucking, FL · GA · SC · NC · AL · TN",
     intro: [
       "The Southeast corridor is where FLEET B LOGISTICS runs deepest. Florida, Georgia, South Carolina, North Carolina, Alabama, and Tennessee form our core regional network, served by owner-operators who run these lanes week in, week out.",
       "For shippers scaling beyond the region, the same fleet extends to full 48-state OTR coverage.",

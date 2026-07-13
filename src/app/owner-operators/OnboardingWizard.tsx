@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/company";
 import { RATES, FMT } from "@/lib/rates";
 
 // ---------------------------------------------------------------
-// Online Onboarding Kit — the full FBL kit as a guided, signable
+// Online Onboarding Kit, the full FBL kit as a guided, signable
 // multi-step form. All rates/percentages render from lib/rates.ts,
 // so changing a price there updates this kit automatically.
 // ---------------------------------------------------------------
@@ -161,7 +161,7 @@ export default function OnboardingWizard() {
           Your completed onboarding kit is with our Safety department. Next step: gather your documents (CDL-A, DOT
           medical card, registration, Form 2290, annual inspection, insurance certificate) and call{" "}
           <a href={COMPANY.phoneHref} className="font-bold text-brand-red">{COMPANY.phone}</a> to schedule your truck
-          inspection at our West Palm Beach HQ — at least 24 hours ahead.
+          inspection at our West Palm Beach HQ, at least 24 hours ahead.
         </p>
         <p className="mt-6 text-xs text-slate-400">Welcome to the fleet. “{COMPANY.tagline}”</p>
       </div>
@@ -202,8 +202,8 @@ export default function OnboardingWizard() {
           <form onSubmit={collect} className="space-y-6">
             <SectionTitle kicker="Kit Component 1" title="Applicant Personal Profile" />
             <p className="text-sm leading-relaxed text-slate-500">
-              Welcome! This guided kit walks you through every form in the official {COMPANY.name} onboarding packet
-              — compliant with FMCSA 49 CFR § 391.21. Your progress moves forward step by step; nothing is submitted
+              Welcome! This guided kit walks you through every form in the official {COMPANY.name} onboarding
+              packet, compliant with FMCSA 49 CFR § 391.21. Your progress moves forward step by step; nothing is submitted
               until you sign at the end.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -215,9 +215,9 @@ export default function OnboardingWizard() {
             <Field label="Current Address" name="currentAddress" required placeholder="Street, City, State, ZIP" />
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Time at Current Address" name="timeAtAddress" required placeholder="e.g. 4 years" />
-              <Field label="SSN (last 4 only — full SSN collected at inspection)" name="ssnLast4" placeholder="####" />
+              <Field label="SSN (last 4 only, full SSN collected at inspection)" name="ssnLast4" placeholder="####" />
             </div>
-            <Field label="Previous Addresses (past 3 years, if any)" name="previousAddresses" placeholder="Address — duration; Address — duration" />
+            <Field label="Previous Addresses (past 3 years, if any)" name="previousAddresses" placeholder="Address, duration; Address, duration" />
             <div className="flex justify-end">
               <button className="btn-primary">Continue →</button>
             </div>
@@ -242,7 +242,7 @@ export default function OnboardingWizard() {
                 <select id="f-denied" name="licenseDeniedOrRevoked" required className="field">
                   <option value="">Select…</option>
                   <option>No</option>
-                  <option>Yes — details below</option>
+                  <option>Yes, details below</option>
                 </select>
               </div>
               <Field label="If yes, provide details" name="licenseDetails" />
@@ -255,26 +255,26 @@ export default function OnboardingWizard() {
                 required
                 rows={3}
                 className="field"
-                placeholder="e.g. Tractor & semi-trailer — Dry Van — 2016 to present — ~800,000 miles"
+                placeholder="e.g. Tractor & semi-trailer, Dry Van, 2016 to present, ~800,000 miles"
               />
             </div>
             <div>
-              <label className="field-label" htmlFor="f-mvr">Accidents & Violations — past 3 years (write NONE if none) *</label>
+              <label className="field-label" htmlFor="f-mvr">Accidents & Violations, past 3 years (write NONE if none) *</label>
               <textarea id="f-mvr" name="accidentsViolations" required rows={2} className="field" placeholder="NONE" />
             </div>
             <div>
-              <label className="field-label" htmlFor="f-hist">Employment / Contract History — past 10 years (carrier, position, dates, reason for leaving) *</label>
+              <label className="field-label" htmlFor="f-hist">Employment / Contract History, past 10 years (carrier, position, dates, reason for leaving) *</label>
               <textarea
                 id="f-hist"
                 name="employmentHistory"
                 required
                 rows={4}
                 className="field"
-                placeholder={"Carrier name — position — from/to — reason for leaving\nCarrier name — position — from/to — reason for leaving"}
+                placeholder={"Carrier name, position, from/to, reason for leaving\nCarrier name, position, from/to, reason for leaving"}
               />
             </div>
             <SignBlock id="sig-app" value={sigApp} onChange={setSigApp}
-              label="Certification: all entries are true and complete — sign by typing your full legal name" />
+              label="Certification: all entries are true and complete, sign by typing your full legal name" />
             <div className="flex justify-between">
               <button type="button" onClick={back} className="btn-secondary">← Back</button>
               <button className="btn-primary">Continue →</button>
@@ -420,7 +420,7 @@ export default function OnboardingWizard() {
             <div className="space-y-4">
               <div className="rounded-lg border border-slate-200 p-5">
                 <h3 className="font-heading text-sm font-extrabold uppercase text-brand-navy">
-                  Addendum A — ELD Device & Dashcam Policy
+                  Addendum A, ELD Device & Dashcam Policy
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   All vehicles under {COMPANY.abbr} authority must run an approved ELD and forward-facing dashcam.
@@ -429,12 +429,12 @@ export default function OnboardingWizard() {
                   days of lease termination.
                 </p>
                 <div className="mt-3">
-                  <Agree name="addendumA">I agree to Addendum A — ELD Device & Dashcam Policy.</Agree>
+                  <Agree name="addendumA">I agree to Addendum A, ELD Device & Dashcam Policy.</Agree>
                 </div>
               </div>
               <div className="rounded-lg border border-slate-200 p-5">
                 <h3 className="font-heading text-sm font-extrabold uppercase text-brand-navy">
-                  Addendum B — Fuel Card Usage & Deduction Policy
+                  Addendum B, Fuel Card Usage & Deduction Policy
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   A company fuel card gives you access to corporate fuel discounts. It is a cash-advance mechanism:
@@ -443,12 +443,12 @@ export default function OnboardingWizard() {
                   deactivate the card and may terminate the lease.
                 </p>
                 <div className="mt-3">
-                  <Agree name="addendumB">I agree to Addendum B — Fuel Card Usage & Deduction Policy.</Agree>
+                  <Agree name="addendumB">I agree to Addendum B, Fuel Card Usage & Deduction Policy.</Agree>
                 </div>
               </div>
               <div className="rounded-lg border border-slate-200 p-5">
                 <h3 className="font-heading text-sm font-extrabold uppercase text-brand-navy">
-                  Addendum C — Invoice Factoring Fee & Deduction Agreement
+                  Addendum C, Invoice Factoring Fee & Deduction Agreement
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   To fund {FMT.settlement} settlements, invoices are factored through a commercial finance partner. A
@@ -457,7 +457,7 @@ export default function OnboardingWizard() {
                   emailed to {COMPANY.email} within {RATES.bolSubmitHours} hours of delivery to avoid settlement holds.
                 </p>
                 <div className="mt-3">
-                  <Agree name="addendumC">I agree to Addendum C — Invoice Factoring Fee & Deduction Agreement.</Agree>
+                  <Agree name="addendumC">I agree to Addendum C, Invoice Factoring Fee & Deduction Agreement.</Agree>
                 </div>
               </div>
             </div>
@@ -488,7 +488,7 @@ export default function OnboardingWizard() {
                   <li key={label as string} className="flex items-center gap-2">
                     <span className={sig ? "text-emerald-600" : "text-brand-red"}>{sig ? "✓" : "✗"}</span>
                     {label}
-                    {sig ? <span className="truncate font-serif italic text-slate-400">— {sig}</span> : null}
+                    {sig ? <span className="truncate font-serif italic text-slate-400">, {sig}</span> : null}
                   </li>
                 ))}
               </ul>
@@ -511,7 +511,7 @@ export default function OnboardingWizard() {
               #{COMPANY.mc}) as of today&apos;s date.
             </Agree>
             <SignBlock id="sig-final" value={sigFinal} onChange={setSigFinal}
-              label="Master signature — type your full legal name to execute the kit" />
+              label="Master signature, type your full legal name to execute the kit" />
             <div className="flex justify-between">
               <button type="button" onClick={back} className="btn-secondary">← Back</button>
               <button disabled={status === "sending"} className="btn-primary disabled:opacity-60">
@@ -520,7 +520,7 @@ export default function OnboardingWizard() {
             </div>
             {status === "error" && (
               <p className="text-sm font-semibold text-brand-red">
-                Submission failed — call {COMPANY.phone} or email the PDF kit to {COMPANY.email}.
+                Submission failed, call {COMPANY.phone} or email the PDF kit to {COMPANY.email}.
               </p>
             )}
           </form>

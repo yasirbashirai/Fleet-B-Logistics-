@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 import { PageHero, MetricsBand, QuoteSection, OwnerOperatorCTA } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "About Us & Reviews — Asset-Based Florida Carrier Built on Honesty",
+  title: "About Us & Reviews, Asset-Based Florida Carrier Built on Honesty",
   description: `${COMPANY.name}: 100% owner-operated OTR trucking company in West Palm Beach, FL. USDOT #${COMPANY.usdot}. Our story, our values, and the ${FMT.pool} share pool that makes us different.`,
 };
 
@@ -22,7 +22,7 @@ const VALUES = [
   {
     icon: "users",
     title: "Partnership Over Payroll",
-    text: "FBL is 100% owner-operated. Our drivers are contractors building their own businesses — and after five years, literal stakeholders in ours.",
+    text: "FBL is 100% owner-operated. Our drivers are contractors building their own businesses, and after five years, literal stakeholders in ours.",
   },
   {
     icon: "wheel",
@@ -43,7 +43,7 @@ export default function AboutPage() {
         label="About Us"
         title="An Asset-Based Carrier Built on"
         highlight="Honesty"
-        subtitle={`${COMPANY.name} is a 100% owner-operated OTR trucking company headquartered in West Palm Beach, Florida — moving freight across the Southeast and all 48 states.`}
+        subtitle={`${COMPANY.name} is a 100% owner-operated OTR trucking company headquartered in West Palm Beach, Florida, moving freight across the Southeast and all 48 states.`}
         image="/images/truck-white-road.jpg"
       />
 
@@ -63,12 +63,12 @@ export default function AboutPage() {
               </p>
               <p>
                 That conviction became our structure. We run a <strong className="text-brand-navy">100% owner-operated
-                fleet</strong> — professional CDL-A contractors who own their equipment, choose their routes, and keep{" "}
+                fleet</strong>, professional CDL-A contractors who own their equipment, choose their routes, and keep{" "}
                 {FMT.split} of gross revenue on every load. And after {FMT.poolYears} of partnership, they qualify for
                 our {FMT.pool} net revenue share pool: a real, audited stake in the company's success.
               </p>
               <p>
-                For shippers, that model is your guarantee. The driver on your dock isn't a number in a fleet — they're
+                For shippers, that model is your guarantee. The driver on your dock isn't a number in a fleet, they're
                 a business owner whose reputation and future earnings ride on your freight arriving on time,
                 intact, and documented.
               </p>
@@ -135,7 +135,7 @@ export default function AboutPage() {
                 {COMPANY.owner.title}
               </p>
               <p className="mt-5 leading-relaxed text-white/80">
-                Bendy built FBL around a simple promise — treat drivers like partners and shippers like neighbors, and
+                Bendy built FBL around a simple promise, treat drivers like partners and shippers like neighbors, and
                 growth takes care of itself. He personally oversees safety, onboarding, and the share-pool program,
                 and he answers to every driver's audit rights, not the other way around.
               </p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
               Judged by the People We <span className="hl-red">Serve</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-              Shippers on our lanes and owner-operators on our fleet — in their own words.
+              Shippers on our lanes and owner-operators on our fleet, in their own words.
             </p>
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -1,5 +1,5 @@
 // ================================================================
-// ⭐ RATES & PROGRAM NUMBERS — THE ONLY FILE YOU EDIT TO CHANGE A PRICE
+// ⭐ RATES & PROGRAM NUMBERS, THE ONLY FILE YOU EDIT TO CHANGE A PRICE
 // ================================================================
 // Every rate, fee, percentage, and timeline shown anywhere on the
 // website OR inside the online onboarding forms comes from this file.
@@ -31,7 +31,7 @@ export const RATES = {
   // Invoice factoring (Addendum C)
   factoringPercent: 3, // % of gross freight revenue per load
 
-  // Hardware (Addendum A) — set the $ amounts when finalized
+  // Hardware (Addendum A), set the $ amounts when finalized
   eld: {
     subscriptionFee: null as number | null, // $ per month (null = "per current schedule")
     dashcamFee: null as number | null, // $ per month

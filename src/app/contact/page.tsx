@@ -6,7 +6,7 @@ import { PageHero } from "@/components/Sections";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us — 24/7 Dispatch | West Palm Beach, FL",
+  title: "Contact Us, 24/7 Dispatch | West Palm Beach, FL",
   description: `Contact ${COMPANY.name}: ${COMPANY.phone} (24/7), ${COMPANY.email}, ${COMPANY.address.full}. Freight quotes, owner-operator applications, and general inquiries.`,
 };
 
@@ -17,7 +17,7 @@ export default function ContactPage() {
         label="Contact"
         title="Talk to a Real Person,"
         highlight="24/7"
-        subtitle="Freight quote, lease-on question, or load update — dispatch answers around the clock."
+        subtitle="Freight quote, lease-on question, or load update, dispatch answers around the clock."
         image="/images/fleet-reefer-dock.jpg"
       />
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
               <a href={COMPANY.phoneHref} className="flex items-center gap-5 rounded-lg border-l-4 border-brand-red bg-slate-50 p-6 transition hover:shadow-card">
                 <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-red text-white"><Icon name="phone" className="h-6 w-6" /></span>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Call Dispatch — 24/7</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Call Dispatch, 24/7</p>
                   <p className="font-heading text-xl font-extrabold text-brand-navy">{COMPANY.phone}</p>
                 </div>
               </a>
@@ -84,7 +84,7 @@ export default function ContactPage() {
       {/* Map */}
       <section className="h-96 w-full">
         <iframe
-          title="Fleet B Logistics location — West Palm Beach, FL"
+          title="Fleet B Logistics location, West Palm Beach, FL"
           src="https://www.google.com/maps?q=730+Malibu+Bay+Dr,+West+Palm+Beach,+FL+33401&output=embed"
           className="h-full w-full border-0"
           loading="lazy"

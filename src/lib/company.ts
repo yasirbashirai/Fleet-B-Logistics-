@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------
-// FLEET B LOGISTICS LLC — single source of truth for company info.
+// FLEET B LOGISTICS LLC, single source of truth for company info.
 // Edit here once; every page, form, and email updates automatically.
 // ---------------------------------------------------------------
 
@@ -34,14 +34,14 @@ export const COMPANY = {
     full: "730 Malibu Bay Dr, Apt 106, West Palm Beach, FL 33401",
   },
 
-  hours: "24/7 — Dispatch & Support Around the Clock",
+  hours: "24/7, Dispatch & Support Around the Clock",
 
   social: {
     facebook: "https://www.facebook.com/share/1E1Bzc34La/?mibextid=wwXIfr",
   },
 
   // Primary market focus
-  serviceArea: "West Palm Beach, Florida — serving the Southeast and OTR lanes nationwide",
+  serviceArea: "West Palm Beach, Florida, serving the Southeast and OTR lanes nationwide",
 
   // SEO keyword targets
   keywords: [

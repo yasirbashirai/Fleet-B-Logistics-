@@ -29,7 +29,7 @@ export default function ApplyForm() {
       <div className="rounded-lg bg-emerald-50 p-8 text-center text-emerald-900">
         <p className="font-heading text-2xl font-extrabold">Application received! 🚛</p>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed">
-          <strong>Check your email</strong> — your official FBL welcome letter is on its way with your next steps.
+          <strong>Check your email</strong>, your official FBL welcome letter is on its way with your next steps.
           You can start the onboarding kit right now:
         </p>
         <a href="#onboarding" className="btn-primary mt-6">Fill Out &amp; Sign the Kit Online →</a>
@@ -55,7 +55,7 @@ export default function ApplyForm() {
       <div>
         <label className="field-label" htmlFor="ap-email">Email *</label>
         <input id="ap-email" name="email" type="email" required className="field" placeholder="you@email.com" />
-        <p className="mt-1 text-xs text-slate-400">Your welcome packet goes here — double-check it.</p>
+        <p className="mt-1 text-xs text-slate-400">Your welcome packet goes here, double-check it.</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
@@ -92,7 +92,7 @@ export default function ApplyForm() {
         <label className="field-label" htmlFor="ap-record">Safety Record *</label>
         <select id="ap-record" name="safetyRecord" required className="field">
           <option value="">Select…</option>
-          <option>Clean — no accidents/violations (3 yrs)</option>
+          <option>Clean, no accidents/violations (3 yrs)</option>
           <option>Minor violations only</option>
           <option>Prefer to discuss</option>
         </select>
@@ -111,7 +111,7 @@ export default function ApplyForm() {
       </button>
       {status === "error" && (
         <p className="text-sm font-semibold text-brand-red">
-          Something went wrong — call recruiting 24/7 at (561) 460-5739.
+          Something went wrong, call recruiting 24/7 at (561) 460-5739.
         </p>
       )}
     </form>

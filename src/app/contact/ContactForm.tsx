@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// General contact form. If the sender selects "Owner-Operator — Lease On",
+// General contact form. If the sender selects "Owner-Operator, Lease On",
 // it posts to /api/apply, which also auto-sends the welcome letter + kit link.
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -14,7 +14,7 @@ export default function ContactForm() {
     setStatus("sending");
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-    const driver = data.topic === "Owner-Operator — Lease On";
+    const driver = data.topic === "Owner-Operator, Lease On";
     try {
       const res = await fetch(driver ? "/api/apply" : "/api/contact", {
         method: "POST",
@@ -37,7 +37,7 @@ export default function ContactForm() {
         {isDriver ? (
           <>
             <p className="mt-2 text-sm">
-              <strong>Check your inbox</strong> — your welcome letter from Fleet B Logistics is on its way, with the
+              <strong>Check your inbox</strong>, your welcome letter from Fleet B Logistics is on its way, with the
               link to complete your onboarding kit online.
             </p>
             <Link href="/owner-operators#onboarding" className="btn-primary mt-5 !py-2.5 !text-xs">
@@ -45,7 +45,7 @@ export default function ContactForm() {
             </Link>
           </>
         ) : (
-          <p className="mt-2 text-sm">We respond fast — usually within the hour, any hour.</p>
+          <p className="mt-2 text-sm">We respond fast, usually within the hour, any hour.</p>
         )}
       </div>
     );
@@ -71,7 +71,7 @@ export default function ContactForm() {
         <label className="field-label" htmlFor="cf-topic">I am contacting you about *</label>
         <select id="cf-topic" name="topic" required className="field">
           <option>Freight Quote / Shipping</option>
-          <option>Owner-Operator — Lease On</option>
+          <option>Owner-Operator, Lease On</option>
           <option>Existing Load / Dispatch</option>
           <option>Other</option>
         </select>
@@ -85,7 +85,7 @@ export default function ContactForm() {
       </button>
       {status === "error" && (
         <p className="text-sm font-semibold text-brand-red">
-          Something went wrong — call us 24/7 at (561) 460-5739.
+          Something went wrong, call us 24/7 at (561) 460-5739.
         </p>
       )}
     </form>

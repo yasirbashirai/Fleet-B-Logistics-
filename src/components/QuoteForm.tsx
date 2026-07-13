@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-// Instant freight quote request form — placed on every major page.
+// Instant freight quote request form, placed on every major page.
 // variant="light" for white cards, "dark" for navy sections.
 export default function QuoteForm({
   variant = "light",
@@ -39,7 +39,7 @@ export default function QuoteForm({
       <div className={`rounded-lg p-8 text-center ${dark ? "bg-white/10 text-white" : "bg-emerald-50 text-emerald-900"}`}>
         <p className="font-heading text-xl font-bold">Quote request received! ✓</p>
         <p className="mt-2 text-sm opacity-80">
-          Our dispatch team reviews quotes 24/7 — expect a call or email shortly.
+          Our dispatch team reviews quotes 24/7, expect a call or email shortly.
         </p>
       </div>
     );
@@ -104,11 +104,11 @@ export default function QuoteForm({
       </button>
       {status === "error" && (
         <p className="text-sm font-semibold text-brand-red">
-          Something went wrong. Please call us at (561) 460-5739 — we answer 24/7.
+          Something went wrong. Please call us at (561) 460-5739, we answer 24/7.
         </p>
       )}
       <p className={`text-xs ${dark ? "text-white/50" : "text-slate-400"}`}>
-        Quotes reviewed around the clock. No spam — ever.
+        Quotes reviewed around the clock. No spam, ever.
       </p>
     </form>
   );

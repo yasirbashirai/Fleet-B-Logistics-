@@ -11,20 +11,20 @@ import OnboardingWizard from "./OnboardingWizard";
 import { PageHero, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: `Owner-Operators — ${FMT.pool} Share Pool Program, Apply & Onboard Online`,
-  description: `Lease on with ${COMPANY.shortName}: keep ${FMT.split} of gross, ${FMT.settlement} settlements, no forced dispatch — and ${FMT.pool} of company net revenue after ${FMT.poolYears}. Apply, fill out, and sign the onboarding kit online.`,
+  title: `Owner-Operators, ${FMT.pool} Share Pool Program, Apply & Onboard Online`,
+  description: `Lease on with ${COMPANY.shortName}: keep ${FMT.split} of gross, ${FMT.settlement} settlements, no forced dispatch, and ${FMT.pool} of company net revenue after ${FMT.poolYears}. Apply, fill out, and sign the onboarding kit online.`,
 };
 
 const BENEFITS = [
   {
     icon: "dollar",
     title: "Exclusive Pool Access",
-    text: `Full eligibility for the exclusive ${FMT.pool} net revenue share pool after ${FMT.poolYears} — paid monthly, split pro-rata among qualified partners.`,
+    text: `Full eligibility for the exclusive ${FMT.pool} net revenue share pool after ${FMT.poolYears}, paid monthly, split pro-rata among qualified partners.`,
   },
   {
     icon: "route",
     title: "Operational Freedom",
-    text: "Total freedom to run your own routes — no forced dispatch, ever. You're a business owner; we act like it.",
+    text: "Total freedom to run your own routes, no forced dispatch, ever. You're a business owner; we act like it.",
   },
   {
     icon: "truck",
@@ -39,7 +39,7 @@ const BENEFITS = [
   {
     icon: "eye",
     title: "Total Transparency",
-    text: `Full company audit rights (after ${FMT.poolYears}) to verify pool earnings — plus rated freight bill access on every percentage-paid load.`,
+    text: `Full company audit rights (after ${FMT.poolYears}) to verify pool earnings, plus rated freight bill access on every percentage-paid load.`,
   },
   {
     icon: "clock",
@@ -70,7 +70,7 @@ const POOL_RULES = [
   },
   {
     title: "Monthly payouts",
-    text: `Pool distributions are calculated and paid within ${RATES.revenuePool.payoutDaysAfterMonthClose} days after each month closes — split equally among all qualified participants.`,
+    text: `Pool distributions are calculated and paid within ${RATES.revenuePool.payoutDaysAfterMonthClose} days after each month closes, split equally among all qualified participants.`,
   },
   {
     title: "Breakdown protection",
@@ -85,7 +85,7 @@ const POOL_RULES = [
 const DOWNLOADS = [
   {
     title: "Owner-Operator Onboarding Kit (Full PDF)",
-    desc: "Every form in one packet: FMCSA driver application, drug-testing consent, equipment lease agreement, direct deposit, NDA, and Addendums A–C. Print, sign, and email back — or use the online version above.",
+    desc: "Every form in one packet: FMCSA driver application, drug-testing consent, equipment lease agreement, direct deposit, NDA, and Addendums A–C. Print, sign, and email back, or use the online version above.",
     href: "/documents/fbl-owner-operator-onboarding-kit.pdf",
     tag: "Onboarding",
   },
@@ -102,12 +102,12 @@ export default function OwnerOperatorsPage() {
 
   return (
     <>
-      {/* Hero — the recruiting flyer, as a webpage */}
+      {/* Hero, the recruiting flyer, as a webpage */}
       <PageHero
         label="Owner-Operators"
         title="Drive Your Success."
         highlight="Share Our Growth."
-        subtitle={`Partner with us & earn your place in our exclusive revenue share pool — ${FMT.pool} of company net revenue after ${FMT.poolYears} of service.`}
+        subtitle={`Partner with us & earn your place in our exclusive revenue share pool, ${FMT.pool} of company net revenue after ${FMT.poolYears} of service.`}
         image="/images/truck-blue-reefer.jpg"
       >
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -170,7 +170,7 @@ export default function OwnerOperatorsPage() {
               ))}
             </div>
 
-            {/* Qualifications box — straight from the flyer */}
+            {/* Qualifications box, straight from the flyer */}
             <Reveal delay={200}>
               <div className="sticky top-44 overflow-hidden rounded-xl bg-navy-gradient text-white shadow-card">
                 <div className="bg-brand-red px-6 py-4">
@@ -212,7 +212,7 @@ export default function OwnerOperatorsPage() {
             </h2>
             <p className="mt-5 leading-relaxed text-slate-600">
               No smoke, no mirror math. You keep {FMT.split} of gross freight revenue on every load. Because you&apos;re
-              paid on percentage, federal law gives you the right to see the rated freight bill — so you can verify
+              paid on percentage, federal law gives you the right to see the rated freight bill, so you can verify
               every settlement against the real number the shipper paid.
             </p>
             <ul className="mt-6 space-y-3 text-sm font-semibold text-slate-700">
@@ -222,7 +222,7 @@ export default function OwnerOperatorsPage() {
               </li>
               <li className="flex items-start gap-3">
                 <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-                Escrow builds at {FMT.escrowWeekly} to a {FMT.escrowCap} cap — returned with interest per 49 CFR § 376.12(k)
+                Escrow builds at {FMT.escrowWeekly} to a {FMT.escrowCap} cap, returned with interest per 49 CFR § 376.12(k)
               </li>
               <li className="flex items-start gap-3">
                 <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
@@ -236,7 +236,7 @@ export default function OwnerOperatorsPage() {
         </div>
       </section>
 
-      {/* Pool rules — transparency section */}
+      {/* Pool rules, transparency section */}
       <section id="pool-rules" className="scroll-mt-44 bg-brand-navy py-20 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <Reveal className="text-center">
@@ -245,7 +245,7 @@ export default function OwnerOperatorsPage() {
               How the <span className="hl-red">{FMT.pool} Pool</span> Actually Works
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              Most programs hide the rules. We publish them. Here are the exact mechanics from our lease agreement —
+              Most programs hide the rules. We publish them. Here are the exact mechanics from our lease agreement,
               the same document you&apos;ll sign.
             </p>
           </Reveal>
@@ -278,7 +278,7 @@ export default function OwnerOperatorsPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-4">
             {[
               { n: "1", t: "Apply Below", d: "5-minute form. Your welcome letter + onboarding kit link arrive by email instantly." },
-              { n: "2", t: "Sign the Kit", d: "Complete the full onboarding kit online right on this page — or download the PDF." },
+              { n: "2", t: "Sign the Kit", d: "Complete the full onboarding kit online right on this page, or download the PDF." },
               { n: "3", t: "Inspection", d: "Bring your truck to our West Palm Beach HQ (schedule 24h ahead) with your documents." },
               { n: "4", t: "Roll", d: "Safety clears your file, ELD gets synced, and dispatch puts you on your first load." },
             ].map((s, i) => (
@@ -304,7 +304,7 @@ export default function OwnerOperatorsPage() {
               <p className="section-label">Step 1</p>
               <h2 className="mt-2 font-heading text-2xl font-extrabold uppercase text-brand-navy">Owner-Operator Application</h2>
               <p className="mb-6 mt-1 text-sm text-slate-500">
-                Quick pre-qualification — the full FMCSA application is in the onboarding kit below.
+                Quick pre-qualification, the full FMCSA application is in the onboarding kit below.
               </p>
               <ApplyForm />
             </div>
@@ -327,7 +327,7 @@ export default function OwnerOperatorsPage() {
                 <a href={COMPANY.phoneHref} className="mt-2 inline-block font-heading text-2xl font-extrabold">
                   {COMPANY.phone}
                 </a>
-                <p className="mt-1 text-xs uppercase tracking-widest text-white/80">Recruiting & Safety — 24/7</p>
+                <p className="mt-1 text-xs uppercase tracking-widest text-white/80">Recruiting & Safety, 24/7</p>
               </div>
             </Reveal>
           </div>
@@ -343,7 +343,7 @@ export default function OwnerOperatorsPage() {
               Fill Out & Sign Your Kit <span className="hl-red">Online</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-              Every form from the official FBL onboarding kit in one guided flow — complete it in one sitting, or{" "}
+              Every form from the official FBL onboarding kit in one guided flow, complete it in one sitting, or{" "}
               <a href="/documents/fbl-owner-operator-onboarding-kit.pdf" download className="font-bold text-brand-blue underline">
                 download the PDF version
               </a>{" "}
@@ -356,7 +356,7 @@ export default function OwnerOperatorsPage() {
           <p className="mt-8 text-center text-xs leading-relaxed text-slate-400">
             Electronic signatures on this kit are intended to carry the same force as handwritten signatures under the
             U.S. E-SIGN Act. Original hard copies may still be requested by Safety and can be mailed to{" "}
-            {COMPANY.address.full}. Questions? Call {COMPANY.phone} — 24/7.
+            {COMPANY.address.full}. Questions? Call {COMPANY.phone}, 24/7.
           </p>
         </div>
       </section>
@@ -424,7 +424,7 @@ export default function OwnerOperatorsPage() {
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
                     Scan signed BOLs, lumper and fuel receipts with a mobile scanning app and email to{" "}
                     <a href={COMPANY.emailHref} className="font-bold text-brand-blue">{COMPANY.email}</a> within{" "}
-                    {RATES.bolSubmitHours} hours of delivery — settlements process within {FMT.settlement}.
+                    {RATES.bolSubmitHours} hours of delivery, settlements process within {FMT.settlement}.
                   </p>
                 </div>
               </div>

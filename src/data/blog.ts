@@ -14,7 +14,7 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "what-is-a-20-percent-share-pool-program-trucking",
-    title: "What Is a 20% Share Pool Program — and Why Owner-Operators Are Talking About Ours",
+    title: "What Is a 20% Share Pool Program, and Why Owner-Operators Are Talking About Ours",
     excerpt:
       "Most carriers offer a percentage of the load. Fleet B Logistics offers a percentage of the company. Here's exactly how our 20% net revenue share pool works, who qualifies, and what it means for a driver's long-term wealth.",
     date: "2026-07-01",
@@ -24,14 +24,14 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       {
         paragraphs: [
-          "In trucking, compensation conversations almost always stop at the load: cents per mile, percentage of linehaul, fuel surcharge pass-through. What almost no carrier talks about is ownership — sharing the company's success itself with the drivers who build it.",
+          "In trucking, compensation conversations almost always stop at the load: cents per mile, percentage of linehaul, fuel surcharge pass-through. What almost no carrier talks about is ownership, sharing the company's success itself with the drivers who build it.",
           "That's what Fleet B Logistics LLC's 20% Share Pool Program does, and it's why owner-operators keep calling us about it.",
         ],
       },
       {
         heading: "The program in one sentence",
         paragraphs: [
-          "After five years of continuous contracted service, our owner-operators qualify for an exclusive pool that distributes 20% of the company's net revenue — paid out monthly, split pro-rata among every qualified participant, verified by full audit rights.",
+          "After five years of continuous contracted service, our owner-operators qualify for an exclusive pool that distributes 20% of the company's net revenue, paid out monthly, split pro-rata among every qualified participant, verified by full audit rights.",
         ],
       },
       {
@@ -44,12 +44,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Why we built it",
         paragraphs: [
-          "Our tagline is 'Honesty is what we stand on.' The share pool is that tagline turned into structure: if drivers create the company's success, drivers should share the company's success. It also means our best partners have a real reason to stay — and shippers get the most experienced, most invested drivers in the market hauling their freight.",
+          "Our tagline is 'Honesty is what we stand on.' The share pool is that tagline turned into structure: if drivers create the company's success, drivers should share the company's success. It also means our best partners have a real reason to stay, and shippers get the most experienced, most invested drivers in the market hauling their freight.",
           "Want the full legal detail? The complete program terms are written into our Owner-Operator Equipment Lease Agreement, available in our onboarding kit. Program details and five-year service eligibility subject to terms and conditions.",
         ],
       },
     ],
-    seoTitle: "20% Share Pool Program Trucking Company — How It Works | Fleet B Logistics",
+    seoTitle: "20% Share Pool Program Trucking Company, How It Works | Fleet B Logistics",
     seoDescription:
       "How Fleet B Logistics' 20% net revenue share pool works: 5-year qualification, monthly pro-rata payouts, full audit rights. The owner-operator program explained.",
   },
@@ -65,37 +65,37 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       {
         paragraphs: [
-          "If you're an owner-operator considering leasing on with Fleet B Logistics LLC, here's the honest, step-by-step picture of what happens after you hit 'apply' — no surprises, because surprises are exactly what we don't do.",
+          "If you're an owner-operator considering leasing on with Fleet B Logistics LLC, here's the honest, step-by-step picture of what happens after you hit 'apply', no surprises, because surprises are exactly what we don't do.",
         ],
       },
       {
-        heading: "Step 1 — Apply online (5 minutes)",
+        heading: "Step 1, Apply online (5 minutes)",
         paragraphs: [
           "Fill out the application form on our Owner-Operators page. You'll immediately receive our welcome letter by email, along with a link to the complete onboarding kit you can fill out and sign online.",
         ],
       },
       {
-        heading: "Step 2 — Complete the onboarding kit",
+        heading: "Step 2, Complete the onboarding kit",
         paragraphs: [
           "The kit covers everything FMCSA requires and everything we require: the Commercial Driver Application (49 CFR § 391.21), drug-testing consent, the Equipment Lease Agreement with our 85.5% gross revenue split, direct deposit authorization, NDA, and the ELD, fuel card, and factoring addendums.",
           "You can complete and sign the whole thing online, or download the PDF and return it by email.",
         ],
       },
       {
-        heading: "Step 3 — Documents and inspection",
+        heading: "Step 3, Documents and inspection",
         paragraphs: [
           "Have ready: CDL-A (front/back), current DOT medical card, truck registration, Form 2290 Schedule 1, annual DOT inspection, and your Certificate of Insurance showing bobtail and physical damage coverage with Fleet B Logistics listed as additional insured.",
           "Schedule your physical truck inspection at our West Palm Beach headquarters at least 24 hours ahead by calling (561) 460-5739.",
         ],
       },
       {
-        heading: "Step 4 — First dispatch and getting paid",
+        heading: "Step 4, First dispatch and getting paid",
         paragraphs: [
-          "Once safety clears your file, you're dispatched. After delivery, scan and email your signed BOL within 24 hours — settlements process within four business days. You keep 85.5% of gross freight revenue on every load, with every deduction itemized on your settlement sheet.",
+          "Once safety clears your file, you're dispatched. After delivery, scan and email your signed BOL within 24 hours, settlements process within four business days. You keep 85.5% of gross freight revenue on every load, with every deduction itemized on your settlement sheet.",
         ],
       },
     ],
-    seoTitle: "Lease On With a Florida Trucking Company — Onboarding Guide | Fleet B Logistics",
+    seoTitle: "Lease On With a Florida Trucking Company, Onboarding Guide | Fleet B Logistics",
     seoDescription:
       "Step-by-step guide to leasing on with Fleet B Logistics: online application, onboarding kit, required documents, 85.5% split, 4-day settlements.",
   },
@@ -117,7 +117,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "What 'asset-based' actually means",
         paragraphs: [
-          "An asset-based carrier owns or directly controls the trucks that haul your freight. Fleet B Logistics runs under its own authority — USDOT #4109105, MC #1569108 — with owner-operators leased directly to our fleet. When we commit to your load, we're committing our own equipment, not shopping your freight on a load board.",
+          "An asset-based carrier owns or directly controls the trucks that haul your freight. Fleet B Logistics runs under its own authority, USDOT #4109105, MC #1569108, with owner-operators leased directly to our fleet. When we commit to your load, we're committing our own equipment, not shopping your freight on a load board.",
         ],
       },
       {
@@ -131,11 +131,11 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Where brokers do fit",
         paragraphs: [
-          "Brokers are useful for surge coverage and odd lanes — no carrier runs everywhere. But your core, repeating lanes belong with an asset-based carrier that answers for its own trucks. That's the freight we want: honest lanes, run honestly, every week.",
+          "Brokers are useful for surge coverage and odd lanes, no carrier runs everywhere. But your core, repeating lanes belong with an asset-based carrier that answers for its own trucks. That's the freight we want: honest lanes, run honestly, every week.",
         ],
       },
     ],
-    seoTitle: "Asset-Based Carrier vs Freight Broker — What Shippers Should Know | Fleet B Logistics",
+    seoTitle: "Asset-Based Carrier vs Freight Broker, What Shippers Should Know | Fleet B Logistics",
     seoDescription:
       "The real differences between booking freight with an asset-based trucking company vs a broker: accountability, pricing, communication. From Fleet B Logistics.",
   },
@@ -143,7 +143,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "no-forced-dispatch-owner-operator-freedom",
     title: "No Forced Dispatch: What Operational Freedom Really Means at FBL",
     excerpt:
-      "Total freedom to run your own routes — while a growing freight network keeps your calendar full. How we balance owner-operator independence with consistent, high-paying loads.",
+      "Total freedom to run your own routes, while a growing freight network keeps your calendar full. How we balance owner-operator independence with consistent, high-paying loads.",
     date: "2026-05-18",
     readMinutes: 4,
     image: "/images/truck-red.jpg",
@@ -151,24 +151,24 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       {
         paragraphs: [
-          "'No forced dispatch' appears in a lot of carrier recruiting ads. Then you lease on and discover that declining two loads puts you at the bottom of the board. That's not freedom — that's a leash with extra steps.",
+          "'No forced dispatch' appears in a lot of carrier recruiting ads. Then you lease on and discover that declining two loads puts you at the bottom of the board. That's not freedom, that's a leash with extra steps.",
         ],
       },
       {
         heading: "Our version, in writing",
         paragraphs: [
-          "At Fleet B Logistics, operational freedom means exactly what our flyer says: total freedom to run your own routes without forced dispatch. You're an independent contractor with your own business strategy — home time, preferred lanes, freight preferences. Our dispatch works for you, presenting consistent, high-paying loads from our growing freight network.",
+          "At Fleet B Logistics, operational freedom means exactly what our flyer says: total freedom to run your own routes without forced dispatch. You're an independent contractor with your own business strategy, home time, preferred lanes, freight preferences. Our dispatch works for you, presenting consistent, high-paying loads from our growing freight network.",
         ],
       },
       {
         heading: "Freedom needs freight to mean anything",
         paragraphs: [
           "Freedom without freight is just unemployment with a truck note. The reason our model works is the network behind it: steady Southeast lanes, growing shipper relationships, and fuel discount programs that keep operating costs down while you choose the loads that fit your business.",
-          "Add the 85.5% gross split, 4-business-day settlements, and the 20% share pool at year five — and independence finally comes with a long-term upside. That's the whole point.",
+          "Add the 85.5% gross split, 4-business-day settlements, and the 20% share pool at year five, and independence finally comes with a long-term upside. That's the whole point.",
         ],
       },
     ],
-    seoTitle: "No Forced Dispatch Trucking Company — Owner-Operator Freedom | Fleet B Logistics",
+    seoTitle: "No Forced Dispatch Trucking Company, Owner-Operator Freedom | Fleet B Logistics",
     seoDescription:
       "What no-forced-dispatch really means at Fleet B Logistics: run your own routes, keep 85.5% of gross, and qualify for the 20% share pool at 5 years.",
   },

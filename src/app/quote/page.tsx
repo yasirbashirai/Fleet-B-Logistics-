@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import { PageHero, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "Get a Freight Quote — Fast, Honest Truckload Rates",
+  title: "Get a Freight Quote, Fast, Honest Truckload Rates",
   description: `Request a truckload freight quote from ${COMPANY.name}. Asset-based carrier rates with no broker margin. 24/7 dispatch: ${COMPANY.phone}.`,
 };
 
@@ -17,7 +17,7 @@ export default function QuotePage() {
         label="Freight Quote"
         title="Honest Rates,"
         highlight="Fast"
-        subtitle="Direct carrier pricing from our own fleet — reviewed by real dispatchers, 24/7."
+        subtitle="Direct carrier pricing from our own fleet, reviewed by real dispatchers, 24/7."
         image="/images/truck-blue-highway.jpg"
       />
       <CredentialStrip />
@@ -37,7 +37,7 @@ export default function QuotePage() {
                 <h3 className="font-heading text-lg font-extrabold uppercase">Why our quotes hold</h3>
                 <ul className="mt-4 space-y-3 text-sm text-white/80">
                   {[
-                    "We quote our own trucks — not spot-market hopes",
+                    "We quote our own trucks, not spot-market hopes",
                     "No broker margin stacked on your rate",
                     "Itemized pricing: linehaul, fuel, accessorials",
                     "If we can't cover it, we say so up front",
