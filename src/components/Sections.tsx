@@ -4,7 +4,6 @@ import { COMPANY } from "@/lib/company";
 import { FMT, RATES } from "@/lib/rates";
 import { Icon } from "./Icons";
 import Counter from "./Counter";
-import QuoteForm from "./QuoteForm";
 import Reveal from "./Reveal";
 
 /* ---------- Page hero (inner pages) ---------- */
@@ -14,6 +13,7 @@ export function PageHero({
   highlight,
   subtitle,
   image = "/images/truck-blue-highway.jpg",
+  subtitleClassName = "",
   children,
 }: {
   label: string;
@@ -21,6 +21,7 @@ export function PageHero({
   highlight?: string;
   subtitle?: string;
   image?: string;
+  subtitleClassName?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -32,7 +33,7 @@ export function PageHero({
         <h1 className="mt-3 max-w-4xl font-heading text-4xl font-extrabold uppercase leading-tight md:text-5xl">
           {title} {highlight && <span className="hl-red">{highlight}</span>}
         </h1>
-        {subtitle && <p className="mt-5 max-w-2xl text-lg text-white/80">{subtitle}</p>}
+        {subtitle && <p className={`mt-5 max-w-2xl text-lg text-white/80 ${subtitleClassName}`}>{subtitle}</p>}
         {children}
       </div>
       <div className="absolute bottom-0 left-0 h-2 w-full bg-red-gradient" />
@@ -65,31 +66,28 @@ export function MetricsBand() {
   );
 }
 
-/* ---------- Quote form section (used on every major page) ---------- */
-export function QuoteSection({
-  title = "Get an Instant Freight Quote",
-  sub = "Tell us about your load, our 24/7 dispatch team responds fast, with honest numbers.",
-}: {
-  title?: string;
-  sub?: string;
-}) {
+/* ---------- Owner-operator spotlight (rich two-column section) ---------- */
+export function OwnerOperatorSpotlight() {
   return (
-    <section id="quote" className="relative overflow-hidden bg-navy-gradient py-20 text-white">
+    <section id="owner-operators-cta" className="relative overflow-hidden bg-navy-gradient py-20 text-white">
       <Image src="/images/fleet-lineup.jpg" alt="" fill className="object-cover opacity-10" sizes="100vw" />
       <div className="absolute -right-20 top-0 h-full w-1/3 -skew-x-12 bg-brand-blue/10" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
         <div>
-          <p className="section-label">Freight Quote</p>
+          <p className="section-label">Owner-Operators</p>
           <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase leading-tight md:text-4xl">
-            {title.split(" ").slice(0, -1).join(" ")} <span className="hl-red">{title.split(" ").slice(-1)}</span>
+            Drive Your Success. <span className="hl-red">Share Our Growth.</span>
           </h2>
-          <p className="mt-4 max-w-md text-white/75">{sub}</p>
+          <p className="mt-4 max-w-md text-white/75">
+            We&apos;re not hiring drivers, we&apos;re building partners. Lease on with FBL and earn your place in our
+            exclusive revenue share pool.
+          </p>
           <ul className="mt-8 space-y-4">
             {[
-              "Direct carrier rates, no broker margin stacking",
-              "Asset-based: we quote trucks we actually control",
-              "24/7 response from real dispatchers",
-              "Transparent, itemized pricing",
+              `Keep ${FMT.split} of gross revenue on every load`,
+              `Settlements paid in ${FMT.settlement}`,
+              "Run your routes, no forced dispatch, ever",
+              `${FMT.pool} of company net revenue after ${FMT.poolYears}`,
             ].map((b) => (
               <li key={b} className="flex items-center gap-3 text-sm font-semibold">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red">
@@ -102,16 +100,72 @@ export function QuoteSection({
           <div className="mt-8 flex items-center gap-3 rounded-lg bg-white/10 p-4 backdrop-blur">
             <Icon name="phone" className="h-8 w-8 text-brand-redLight" />
             <div>
-              <p className="text-xs uppercase tracking-wider text-white/60">Prefer to talk? Call dispatch 24/7</p>
+              <p className="text-xs uppercase tracking-wider text-white/60">Questions first? Recruiting & Safety, 24/7</p>
               <a href={COMPANY.phoneHref} className="font-heading text-xl font-extrabold hover:text-brand-redLight">
                 {COMPANY.phone}
               </a>
             </div>
           </div>
         </div>
-        <div className="rounded-xl bg-white p-6 shadow-card md:p-8">
-          <QuoteForm />
+        <div className="rounded-xl bg-white p-6 text-center shadow-card md:p-8">
+          <div className="mx-auto flex h-40 w-40 flex-col items-center justify-center rounded-full border-4 border-brand-red bg-brand-navy shadow-card-red">
+            <p className="font-heading text-4xl font-extrabold text-white">{FMT.pool}</p>
+            <p className="mt-1 px-4 font-heading text-[10px] font-bold uppercase tracking-widest text-brand-blueLight">
+              Net Revenue Share
+            </p>
+          </div>
+          <p className="mt-4 font-heading text-xs font-bold uppercase tracking-[0.25em] text-brand-red">
+            After {FMT.poolYears} of Service
+          </p>
+          <ul className="mt-6 space-y-2.5 text-left">
+            {[
+              "Clean CDL-A safety record",
+              "Commitment to long-term partnership",
+              "Reliable owned or leased equipment",
+              "Commitment to professionalism",
+            ].map((q) => (
+              <li key={q} className="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
+                <Icon name="check" className="h-4 w-4 shrink-0 text-brand-red" /> {q}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-7 flex flex-col gap-3">
+            <Link href="/owner-operators#apply" className="btn-primary w-full">
+              Apply Today <Icon name="arrow" className="h-4 w-4" />
+            </Link>
+            <Link href="/owner-operators" className="btn-secondary w-full">See the Program</Link>
+          </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Talk to our team CTA (replaces the old quote section) ---------- */
+export function TalkToTeamSection() {
+  return (
+    <section id="talk" className="relative overflow-hidden bg-navy-gradient py-20 text-center text-white">
+      <Image src="/images/fleet-lineup.jpg" alt="" fill className="object-cover opacity-10" sizes="100vw" />
+      <div className="relative mx-auto max-w-3xl px-4">
+        <p className="section-label">Contact</p>
+        <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase leading-tight md:text-4xl">
+          Talk to Our <span className="hl-red">Team</span>
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-white/75">
+          Real people, straight answers, 24/7. Tell us what you&apos;re moving or where you want your business to go,
+          and we&apos;ll take it from there.
+        </p>
+        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link href="/contact" className="btn-primary">
+            Talk to Our Team <Icon name="arrow" className="h-4 w-4" />
+          </Link>
+          <a href={COMPANY.phoneHref} className="btn-outline">
+            <Icon name="phone" className="h-4 w-4" /> {COMPANY.phone}
+          </a>
+        </div>
+        <p className="mt-6 text-xs font-bold uppercase tracking-widest text-white/50">
+          Dispatch & support answer day or night
+        </p>
       </div>
     </section>
   );
@@ -160,7 +214,7 @@ export function CredentialStrip() {
   ];
   return (
     <div className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-4 py-4">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-4 sm:justify-center sm:gap-x-10">
         {items.map((it) => (
           <span key={it.text} className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500">
             <Icon name={it.icon} className="h-4 w-4 text-brand-red" />

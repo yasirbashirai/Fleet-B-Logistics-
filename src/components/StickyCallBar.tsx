@@ -15,10 +15,10 @@ export default function StickyCallBar() {
         <Icon name="phone" className="h-4 w-4 text-brand-red" /> Call 24/7
       </a>
       <Link
-        href="/quote"
+        href="/contact"
         className="flex items-center justify-center gap-1.5 bg-brand-blue py-3 font-heading text-xs font-bold uppercase text-white"
       >
-        <Icon name="doc" className="h-4 w-4" /> Get Quote
+        <Icon name="mail" className="h-4 w-4" /> Our Team
       </Link>
       <Link
         href="/owner-operators#apply"

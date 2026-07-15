@@ -79,8 +79,8 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/quote" className="btn-secondary !px-5 !py-2.5 !text-xs">
-              Get a Quote
+            <Link href="/contact" className="btn-secondary !px-5 !py-2.5 !text-xs">
+              Talk to Our Team
             </Link>
             <Link href="/owner-operators#apply" className="btn-primary !px-5 !py-2.5 !text-xs">
               Lease On
@@ -115,7 +115,7 @@ export default function Header() {
               </Link>
             ))}
             <div className="mt-4 flex flex-col gap-3">
-              <Link href="/quote" className="btn-secondary">Get a Quote</Link>
+              <Link href="/contact" className="btn-secondary">Talk to Our Team</Link>
               <Link href="/owner-operators#apply" className="btn-primary">Lease On With FBL</Link>
             </div>
           </nav>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { FORM_API } from "@/lib/formApi";
 import { COMPANY } from "@/lib/company";
 import { RATES, FMT } from "@/lib/rates";
 
@@ -99,6 +100,16 @@ export default function OnboardingWizard() {
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const all = useRef<Record<string, unknown>>({});
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  // Bring the user to the top of the kit (not the top of the page) when the step changes,
+  // offset for the sticky header + anchor nav.
+  function scrollToKit() {
+    const el = wrapRef.current;
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 170;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
   // signatures per component
   const [sigApp, setSigApp] = useState("");
   const [sigDrug, setSigDrug] = useState("");
@@ -113,7 +124,7 @@ export default function OnboardingWizard() {
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     all.current = { ...all.current, ...data };
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToKit();
   }
 
   async function submitAll(e: React.FormEvent<HTMLFormElement>) {
@@ -137,14 +148,14 @@ export default function OnboardingWizard() {
       kitVersion: "web-v1",
     };
     try {
-      const res = await fetch("/api/onboarding", {
+      const res = await fetch(`${FORM_API}/onboarding`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error();
       setStatus("sent");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToKit();
     } catch {
       setStatus("error");
     }
@@ -152,7 +163,7 @@ export default function OnboardingWizard() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-xl bg-white p-10 text-center shadow-card">
+      <div ref={wrapRef} className="rounded-xl bg-white p-10 text-center shadow-card">
         <p className="text-5xl">🚛</p>
         <h2 className="mt-4 font-heading text-2xl font-extrabold uppercase text-brand-navy">
           Kit submitted & signed!
@@ -170,11 +181,11 @@ export default function OnboardingWizard() {
 
   const back = () => {
     setStep((s) => Math.max(s - 1, 0));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToKit();
   };
 
   return (
-    <div className="overflow-hidden rounded-xl bg-white shadow-card">
+    <div ref={wrapRef} className="overflow-hidden rounded-xl bg-white shadow-card">
       {/* Progress */}
       <div className="bg-brand-navy px-6 py-5">
         <div className="flex items-center justify-between">

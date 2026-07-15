@@ -11,6 +11,7 @@ import OnboardingWizard from "./OnboardingWizard";
 import { PageHero, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/owner-operators" },
   title: `Owner-Operators, ${FMT.pool} Share Pool Program, Apply & Onboard Online`,
   description: `Lease on with ${COMPANY.shortName}: keep ${FMT.split} of gross, ${FMT.settlement} settlements, no forced dispatch, and ${FMT.pool} of company net revenue after ${FMT.poolYears}. Apply, fill out, and sign the onboarding kit online.`,
 };
@@ -100,8 +101,48 @@ const DOWNLOADS = [
 export default function OwnerOperatorsPage() {
   const faqPosts = BLOG_POSTS.filter((p) => p.category === "Owner-Operators");
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `What is the ${FMT.pool} share pool program at Fleet B Logistics?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `After ${FMT.poolYears} of continuous contracted service, Fleet B Logistics owner-operators qualify for an exclusive pool that distributes ${FMT.pool} of the company's net revenue, paid monthly, split pro-rata among qualified participants, with full audit rights. Program details subject to the Owner-Operator Equipment Lease Agreement.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much do owner-operators keep per load at Fleet B Logistics?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Owner-operators keep ${FMT.split} of gross freight revenue on every load, with settlements processed within ${FMT.settlement} of clean paperwork and every deduction itemized.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Fleet B Logistics force dispatch?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Owner-operators have total freedom to run their own routes with no forced dispatch, supported by a growing freight network, fuel discount programs, and 24/7 dispatch.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I lease on with Fleet B Logistics?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Apply online in about 5 minutes, you'll instantly receive the welcome letter by email, then complete and e-sign the full onboarding kit online, gather your documents (CDL-A, DOT medical card, registration, Form 2290, inspection, insurance), and schedule your truck inspection at the West Palm Beach headquarters by calling (561) 460-5739.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero, the recruiting flyer, as a webpage */}
       <PageHero
         label="Owner-Operators"

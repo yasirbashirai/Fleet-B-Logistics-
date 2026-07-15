@@ -54,8 +54,8 @@ export default function Footer() {
               <Link href="/services#areas" className="hover:text-brand-redLight">Service Areas</Link>
             </li>
             <li>
-              <Link href="/quote" className="font-semibold text-brand-blueLight hover:text-white">
-                Request a Freight Quote →
+              <Link href="/contact" className="font-semibold text-brand-blueLight hover:text-white">
+                Talk to Our Team →
               </Link>
             </li>
           </ul>

@@ -1,0 +1,75 @@
+# ================================================================
+# FLEET B LOGISTICS LLC — Apache configuration
+# For static hosting (Hostinger / cPanel / any Apache server)
+# ================================================================
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ---- Force HTTPS ----
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # ---- Form API: /php-api/contact → /php-api/contact.php ----
+  RewriteRule ^php-api/(contact|apply|onboarding)/?$ php-api/$1.php [L]
+
+  # ---- Legacy URL redirects (old multi-page structure) ----
+  RewriteRule ^quote/?$ /contact/ [R=301,L,NE]
+  RewriteRule ^apply/?$ /owner-operators/#apply [R=301,L,NE]
+  RewriteRule ^onboarding/?$ /owner-operators/#onboarding [R=301,L,NE]
+  RewriteRule ^resources/?$ /owner-operators/#resources [R=301,L,NE]
+  RewriteRule ^reviews/?$ /about/#reviews [R=301,L,NE]
+  RewriteRule ^blog(/.*)?$ /owner-operators/#faq [R=301,L,NE]
+  RewriteRule ^areas(/.*)?$ /services/#areas [R=301,L,NE]
+  RewriteRule ^industries(/.*)?$ /services/#industries [R=301,L,NE]
+  RewriteRule ^services/otr-trucking/?$ /services/#otr-trucking [R=301,L,NE]
+  RewriteRule ^services/dry-van-freight/?$ /services/#dry-van-freight [R=301,L,NE]
+  RewriteRule ^services/expedited-freight/?$ /services/#expedited-freight [R=301,L,NE]
+  RewriteRule ^services/regional-southeast/?$ /services/#regional-southeast [R=301,L,NE]
+</IfModule>
+
+# ---- Custom 404 ----
+ErrorDocument 404 /404.html
+
+# ---- Compression ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml text/xml application/xml
+</IfModule>
+
+# ---- Browser caching ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/pdf "access plus 1 week"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Next.js hashed build assets never change — cache forever
+<IfModule mod_headers.c>
+  <FilesMatch "^.*\/_next\/static\/.*$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # ---- Security headers ----
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ---- Protect PHP config from direct access ----
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "_lib.php">
+  Require all denied
+</Files>

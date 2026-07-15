@@ -9,9 +9,10 @@ import { COMPANY } from "@/lib/company";
 import { Icon } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 import Accordion from "@/components/Accordion";
-import { PageHero, QuoteSection, OwnerOperatorCTA, CredentialStrip } from "@/components/Sections";
+import { PageHero, OwnerOperatorSpotlight, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Trucking & Freight Services, OTR, Dry Van, Expedited, Regional",
   description:
     "Fleet B Logistics services: OTR transportation, dry van freight, expedited time-critical loads, and Southeast regional trucking, plus the industries and areas we serve. West Palm Beach, FL.",
@@ -27,13 +28,14 @@ export default function ServicesPage() {
         title="Freight Services Run by"
         highlight="Owners"
         subtitle="Every FBL service is delivered by owner-operators with a direct stake in your freight arriving on time and intact."
+        subtitleClassName="text-justify md:text-left"
         image="/images/truck-blue-highway.jpg"
       />
       <CredentialStrip />
 
       {/* Quick anchor nav */}
       <div className="sticky top-[104px] z-30 border-b border-slate-200 bg-white/95 backdrop-blur md:top-[112px]">
-        <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2 text-xs font-bold uppercase tracking-wider">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-1 px-4 py-2 text-xs font-bold uppercase tracking-wider md:flex-nowrap md:justify-start md:overflow-x-auto">
           {[
             ["#services", "Our Services"],
             ["#equipment", "Equipment"],
@@ -81,8 +83,8 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <div className="mt-7">
-                    <Link href="/quote" className="btn-primary !py-2.5 !text-xs">
-                      Quote This Service
+                    <Link href="/contact" className="btn-primary !py-2.5 !text-xs">
+                      Talk to Our Team
                     </Link>
                   </div>
                 </div>
@@ -228,8 +230,7 @@ export default function ServicesPage() {
         </section>
       )}
 
-      <OwnerOperatorCTA />
-      <QuoteSection />
+      <OwnerOperatorSpotlight />
     </>
   );
 }

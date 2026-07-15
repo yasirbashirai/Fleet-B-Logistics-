@@ -9,7 +9,7 @@ import { REGIONS } from "@/data/regions";
 import { REVIEWS } from "@/data/reviews";
 import { Icon } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
-import { MetricsBand, QuoteSection, OwnerOperatorCTA, CredentialStrip } from "@/components/Sections";
+import { MetricsBand, TalkToTeamSection, OwnerOperatorCTA, CredentialStrip } from "@/components/Sections";
 
 export const metadata: Metadata = {
   title: `${COMPANY.shortName}, Asset-Based OTR Trucking Company in West Palm Beach, FL`,
@@ -49,13 +49,6 @@ const WHY = [
   },
 ];
 
-const STEPS = [
-  { n: "01", title: "Request Your Quote", text: "60-second form or one call to 24/7 dispatch. Real numbers, fast." },
-  { n: "02", title: "We Assign the Truck", text: "An owner-operator from our own fleet is committed to your load, no reselling." },
-  { n: "03", title: "Track to Delivery", text: "Proactive check calls and ELD tracking from pickup to signed POD." },
-  { n: "04", title: "Clean Paperwork", text: "POD and invoicing within 24 hours. Your freight file, closed clean." },
-];
-
 export default function HomePage() {
   return (
     <>
@@ -92,8 +85,8 @@ export default function HomePage() {
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Link href="/quote" className="btn-primary">
-              Get an Instant Quote <Icon name="arrow" className="h-4 w-4" />
+            <Link href="/contact" className="btn-primary">
+              Talk to Our Team <Icon name="arrow" className="h-4 w-4" />
             </Link>
             <Link href="/owner-operators" className="btn-secondary">
               Join the {FMT.pool} Share Pool
@@ -193,7 +186,7 @@ export default function HomePage() {
               <br />
               <span className="hl-red">Share Our Growth.</span>
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+            <p className="mt-5 text-justify text-lg leading-relaxed text-slate-600 md:text-left">
               We&apos;re not hiring drivers, we&apos;re building partners. Lease on with FBL, keep{" "}
               <strong className="text-brand-navy">{FMT.split} of gross revenue</strong>, get settled in{" "}
               <strong className="text-brand-navy">{FMT.settlement}</strong>, and after {FMT.poolYears} of service,
@@ -254,34 +247,6 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ============ HOW IT WORKS (shipper journey) ============ */}
-      <section className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <Reveal className="text-center">
-            <p className="section-label">Simple by Design</p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase text-brand-navy md:text-4xl">
-              From Quote to <span className="hl-blue">Delivered</span> in 4 Steps
-            </h2>
-          </Reveal>
-          <div className="mt-14 grid gap-6 md:grid-cols-4">
-            {STEPS.map((s, i) => (
-              <Reveal key={s.n} delay={i * 90}>
-                <div className="relative h-full rounded-lg border-t-4 border-brand-red bg-white p-6 shadow-card">
-                  <span className="font-heading text-4xl font-extrabold text-slate-200">{s.n}</span>
-                  <h3 className="mt-2 font-heading text-base font-extrabold uppercase text-brand-navy">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.text}</p>
-                  {i < STEPS.length - 1 && (
-                    <span className="absolute -right-4 top-1/2 hidden -translate-y-1/2 text-brand-red md:block">
-                      <Icon name="arrow" className="h-6 w-6" />
-                    </span>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -364,7 +329,7 @@ export default function HomePage() {
       </section>
 
       <OwnerOperatorCTA />
-      <QuoteSection />
+      <TalkToTeamSection />
     </>
   );
 }

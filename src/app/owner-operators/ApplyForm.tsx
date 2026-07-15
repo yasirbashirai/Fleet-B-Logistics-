@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FORM_API } from "@/lib/formApi";
 
 export default function ApplyForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -11,7 +12,7 @@ export default function ApplyForm() {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     try {
-      const res = await fetch("/api/apply", {
+      const res = await fetch(`${FORM_API}/apply`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

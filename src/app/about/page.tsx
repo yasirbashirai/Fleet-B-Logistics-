@@ -6,9 +6,10 @@ import { FMT } from "@/lib/rates";
 import { REVIEWS } from "@/data/reviews";
 import { Icon } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
-import { PageHero, MetricsBand, QuoteSection, OwnerOperatorCTA } from "@/components/Sections";
+import { PageHero, MetricsBand, TalkToTeamSection, OwnerOperatorCTA } from "@/components/Sections";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us & Reviews, Asset-Based Florida Carrier Built on Honesty",
   description: `${COMPANY.name}: 100% owner-operated OTR trucking company in West Palm Beach, FL. USDOT #${COMPANY.usdot}. Our story, our values, and the ${FMT.pool} share pool that makes us different.`,
 };
@@ -227,7 +228,7 @@ export default function AboutPage() {
       </section>
 
       <OwnerOperatorCTA />
-      <QuoteSection />
+      <TalkToTeamSection />
     </>
   );
 }

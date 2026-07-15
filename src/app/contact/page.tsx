@@ -6,6 +6,7 @@ import { PageHero } from "@/components/Sections";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Us, 24/7 Dispatch | West Palm Beach, FL",
   description: `Contact ${COMPANY.name}: ${COMPANY.phone} (24/7), ${COMPANY.email}, ${COMPANY.address.full}. Freight quotes, owner-operator applications, and general inquiries.`,
 };

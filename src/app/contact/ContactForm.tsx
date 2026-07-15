@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FORM_API } from "@/lib/formApi";
 import Link from "next/link";
 
 // General contact form. If the sender selects "Owner-Operator, Lease On",
@@ -16,7 +17,7 @@ export default function ContactForm() {
     const data = Object.fromEntries(new FormData(form).entries());
     const driver = data.topic === "Owner-Operator, Lease On";
     try {
-      const res = await fetch(driver ? "/api/apply" : "/api/contact", {
+      const res = await fetch(driver ? `${FORM_API}/apply` : `${FORM_API}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
