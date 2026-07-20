@@ -76,3 +76,8 @@ ErrorDocument 404 /404.html
 <Files "_lib.php">
   Require all denied
 </Files>
+
+# ---- Internal docs are not for the public web ----
+<FilesMatch "\.md$">
+  Require all denied
+</FilesMatch>
