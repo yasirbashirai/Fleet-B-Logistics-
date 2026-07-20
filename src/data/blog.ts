@@ -77,7 +77,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Step 2, Complete the onboarding kit",
         paragraphs: [
-          "The kit covers everything FMCSA requires and everything we require: the Commercial Driver Application (49 CFR § 391.21), drug-testing consent, the Equipment Lease Agreement with our 85.5% gross revenue split, direct deposit authorization, NDA, and the ELD, fuel card, and factoring addendums.",
+          "The kit covers everything FMCSA requires and everything we require: the Commercial Driver Application (49 CFR § 391.21), drug-testing consent, the Equipment Lease Agreement with our 89.5% gross revenue split, direct deposit authorization, NDA, and the ELD, fuel card, and factoring addendums.",
           "You can complete and sign the whole thing online, or download the PDF and return it by email.",
         ],
       },
@@ -91,13 +91,13 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Step 4, First dispatch and getting paid",
         paragraphs: [
-          "Once safety clears your file, you're dispatched. After delivery, scan and email your signed BOL within 24 hours, settlements process within four business days. You keep 85.5% of gross freight revenue on every load, with every deduction itemized on your settlement sheet.",
+          "Once safety clears your file, you're dispatched. After delivery, scan and email your signed BOL within 24 hours, settlements process within four business days. You keep 89.5% of gross freight revenue on every load, with every deduction itemized on your settlement sheet.",
         ],
       },
     ],
     seoTitle: "Lease On With a Florida Trucking Company, Onboarding Guide | Fleet B Logistics",
     seoDescription:
-      "Step-by-step guide to leasing on with Fleet B Logistics: online application, onboarding kit, required documents, 85.5% split, 4-day settlements.",
+      "Step-by-step guide to leasing on with Fleet B Logistics: online application, onboarding kit, required documents, 89.5% split, 4-day settlements.",
   },
   {
     slug: "asset-based-carrier-vs-freight-broker",
@@ -164,12 +164,12 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Freedom needs freight to mean anything",
         paragraphs: [
           "Freedom without freight is just unemployment with a truck note. The reason our model works is the network behind it: steady Southeast lanes, growing shipper relationships, and fuel discount programs that keep operating costs down while you choose the loads that fit your business.",
-          "Add the 85.5% gross split, 4-business-day settlements, and the 20% share pool at year five, and independence finally comes with a long-term upside. That's the whole point.",
+          "Add the 89.5% gross split, 4-business-day settlements, and the 20% share pool at year five, and independence finally comes with a long-term upside. That's the whole point.",
         ],
       },
     ],
     seoTitle: "No Forced Dispatch Trucking Company, Owner-Operator Freedom | Fleet B Logistics",
     seoDescription:
-      "What no-forced-dispatch really means at Fleet B Logistics: run your own routes, keep 85.5% of gross, and qualify for the 20% share pool at 5 years.",
+      "What no-forced-dispatch really means at Fleet B Logistics: run your own routes, keep 89.5% of gross, and qualify for the 20% share pool at 5 years.",
   },
 ];

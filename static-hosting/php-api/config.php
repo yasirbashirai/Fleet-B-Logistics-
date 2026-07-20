@@ -26,7 +26,7 @@ define('COMPANY_MC', '1569108');
 define('COMPANY_OWNER', 'Bendy Jean Baptiste');
 
 // Rates referenced in the welcome letter (mirror of src/lib/rates.ts):
-define('RATE_SPLIT', '85.5%');
+define('RATE_SPLIT', '89.5%');
 define('RATE_SETTLEMENT_DAYS', '4');
 define('RATE_POOL', '20%');
 define('RATE_POOL_YEARS', '5');

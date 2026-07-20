@@ -11,7 +11,7 @@ export const REVIEWS: Review[] = [
     name: "Marcus D.",
     role: "Owner-Operator, leased on 2026",
     rating: 5,
-    text: "The 85.5% split is real and settlements actually hit in four days like they promise. No forced dispatch, no games. First carrier I've leased to that runs completely transparent.",
+    text: "The 89.5% split is real and settlements actually hit in four days like they promise. No forced dispatch, no games. First carrier I've leased to that runs completely transparent.",
   },
   {
     name: "Sandra K.",

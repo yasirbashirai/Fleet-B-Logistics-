@@ -30,7 +30,7 @@ flyer (red `#ed1d26` / blue `#29689a` / navy, Montserrat + Inter).
 ## ⭐ Changing a price or rate (the one-file rule)
 
 Every rate on the site AND inside the online forms comes from **`src/lib/rates.ts`**:
-85.5% split, 4-day settlements, 20% pool rules, escrow ($250/wk → $2,500), 3% factoring, ELD fees, etc.
+89.5% split, 4-day settlements, 20% pool rules, escrow ($250/wk → $2,500), 3% factoring, ELD fees, etc.
 
 **Change a number there once → the entire website and all forms update automatically.**
 Company info (phone, address, USDOT…) lives in `src/lib/company.ts` the same way.

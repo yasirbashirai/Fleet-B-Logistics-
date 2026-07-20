@@ -8,7 +8,7 @@
 
 export const RATES = {
   // Owner-operator compensation
-  grossRevenueSplit: 85.5, // % of gross freight revenue paid to the owner-operator
+  grossRevenueSplit: 89.5, // % of gross freight revenue paid to the owner-operator
   settlementDays: 4, // business days to settlement after paperwork submission
 
   // 20% Revenue Share Pool program
