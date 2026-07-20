@@ -4,7 +4,7 @@
 # ================================================================
 
 Options -Indexes
-DirectoryIndex index.html
+DirectoryIndex index.html index.php
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -13,8 +13,11 @@ DirectoryIndex index.html
   RewriteCond %{HTTPS} !=on
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+  # ---- Stored submissions & settings are NEVER web-accessible ----
+  RewriteRule ^php-api/data(/.*)?$ - [F,L]
+
   # ---- Form API: /php-api/contact → /php-api/contact.php ----
-  RewriteRule ^php-api/(contact|apply|onboarding)/?$ php-api/$1.php [L]
+  RewriteRule ^php-api/(contact|apply|onboarding|settings)/?$ php-api/$1.php [L]
 
   # ---- Legacy URL redirects (old multi-page structure) ----
   RewriteRule ^quote/?$ /contact/ [R=301,L,NE]

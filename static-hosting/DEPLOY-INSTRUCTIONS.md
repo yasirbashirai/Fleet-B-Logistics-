@@ -16,10 +16,24 @@ hosting (Hostinger, GoDaddy, Namecheap, etc.).
 
 - All website pages (pre-rendered, fast, SEO-ready)
 - `.htaccess` — HTTPS redirect, legacy URL redirects, caching, compression, security headers
-- `php-api/` — the form handlers (quote, contact, owner-operator application, onboarding kit)
+- `php-api/` — the form handlers (contact, owner-operator application, onboarding kit)
+- `admin/` — the owner admin panel (see below)
 - `sitemap.xml` + `robots.txt` — submit the sitemap in Google Search Console
 - `404.html` — custom not-found page
 - `documents/` — the onboarding kit + lease termination checklist PDFs
+
+## ⭐ Owner admin panel — `https://yourdomain.com/admin/`
+
+Password-protected page for the business owner (default password in
+`php-api/config.php`, change it from the panel after first login):
+
+- **Submissions inbox** — every contact message, driver application, and
+  signed onboarding kit is SAVED on the server the moment it's submitted
+  (`php-api/data/`, blocked from the web). Nothing is lost even if an
+  email fails to send. Unread items are marked with a red dot.
+- **Company Info** — the owner can change the phone number, public email,
+  address, hours, and the notification email. The live website, forms,
+  and outgoing emails update immediately, no rebuild or developer needed.
 
 ## ⭐ One thing to check: email delivery
 

@@ -10,9 +10,13 @@ if (empty($data['name']) || empty($data['email']) || empty($data['phone'])) {
     respond(400, array('error' => 'Missing required fields'));
 }
 
+// Save FIRST so the application is never lost, even if email fails.
+$id = save_submission('apply', $data);
+
 // 1) internal notification
 $notify = email_shell('New Owner-Operator Application from the website', rows_table($data));
-send_html_mail(NOTIFY_EMAIL, '🚛 New Owner-Operator Application, FBL website', $notify, $data['email']);
+$sent = send_html_mail(fbl_setting('notifyEmail'), '🚛 New Owner-Operator Application, FBL website', $notify, $data['email']);
+update_submission($id, array('emailSent' => (bool)$sent));
 
 // 2) automated welcome letter to the applicant
 $parts = preg_split('/\s+/', trim($data['name']));
@@ -20,7 +24,7 @@ $firstName = $parts[0] ? $parts[0] : 'Owner-Operator';
 $kitUrl = SITE_URL . '/owner-operators/#onboarding';
 $pdfUrl = SITE_URL . '/documents/fbl-owner-operator-onboarding-kit.pdf';
 $split = RATE_SPLIT; $days = RATE_SETTLEMENT_DAYS; $pool = RATE_POOL; $poolYears = RATE_POOL_YEARS;
-$phone = COMPANY_PHONE; $owner = COMPANY_OWNER; $company = COMPANY_NAME;
+$phone = fbl_setting('phone'); $owner = COMPANY_OWNER; $company = COMPANY_NAME;
 
 $welcome = email_shell('Welcome to Fleet B Logistics!', "
   <p>Dear $firstName,</p>
@@ -56,4 +60,4 @@ $welcome = email_shell('Welcome to Fleet B Logistics!', "
 ");
 send_html_mail($data['email'], 'Welcome to Fleet B Logistics, Your Onboarding Kit Inside 🚛', $welcome);
 
-respond(200, array('ok' => true));
+respond(200, array('ok' => true, 'id' => $id));

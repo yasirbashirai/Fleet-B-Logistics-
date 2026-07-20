@@ -31,5 +31,9 @@ define('RATE_SETTLEMENT_DAYS', '4');
 define('RATE_POOL', '20%');
 define('RATE_POOL_YEARS', '5');
 
+// /admin panel login (bcrypt hash — default password: FleetB#2026).
+// The owner can change it from the admin panel itself (stored in data/admin.json).
+define('ADMIN_PASSWORD_HASH', '$2y$12$6vzQ87hAi/5f34kpdwVHwumRUZjEP2jtiMc.lDE8POB0v.XPRbRdC');
+
 // Site URL used for links in emails (no trailing slash):
 define('SITE_URL', 'https://' . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'www.fleetblogistics.com'));

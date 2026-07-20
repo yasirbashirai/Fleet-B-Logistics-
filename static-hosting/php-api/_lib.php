@@ -2,6 +2,94 @@
 // Shared helpers for the FBL form handlers.
 require_once __DIR__ . '/config.php';
 
+// ================================================================
+// Data storage — submissions + admin-editable settings live in
+// php-api/data/ (denied to the web by .htaccess, PHP-only access).
+// ================================================================
+define('FBL_DATA_DIR', __DIR__ . '/data');
+
+function fbl_data_dir($sub = '') {
+    $dir = FBL_DATA_DIR . ($sub !== '' ? '/' . $sub : '');
+    if (!is_dir($dir)) { mkdir($dir, 0755, true); }
+    // Belt-and-suspenders: deny web access even if the root .htaccess rule is lost.
+    $ht = FBL_DATA_DIR . '/.htaccess';
+    if (!file_exists($ht)) {
+        file_put_contents($ht, "Require all denied\nDeny from all\n");
+    }
+    return $dir;
+}
+
+// Persist a submission BEFORE any email attempt so nothing is ever lost.
+function save_submission($type, $data) {
+    $dir = fbl_data_dir('submissions');
+    $id = date('Ymd-His') . '-' . $type . '-' . substr(bin2hex(random_bytes(4)), 0, 6);
+    $record = array(
+        'id' => $id,
+        'type' => $type,
+        'receivedAt' => date('c'),
+        'seen' => false,
+        'emailSent' => false,
+        'data' => $data,
+    );
+    file_put_contents($dir . '/' . $id . '.json', json_encode($record, JSON_PRETTY_PRINT), LOCK_EX);
+    return $id;
+}
+
+function update_submission($id, $patch) {
+    $path = fbl_data_dir('submissions') . '/' . basename($id) . '.json';
+    if (!file_exists($path)) return false;
+    $rec = json_decode(file_get_contents($path), true);
+    if (!is_array($rec)) return false;
+    foreach ($patch as $k => $v) { $rec[$k] = $v; }
+    file_put_contents($path, json_encode($rec, JSON_PRETTY_PRINT), LOCK_EX);
+    return true;
+}
+
+// Admin-editable settings, merged over the config.php defaults.
+function fbl_settings_defaults() {
+    return array(
+        'phone' => COMPANY_PHONE,
+        'email' => COMPANY_EMAIL,
+        'address' => COMPANY_ADDRESS,
+        'hours' => '24/7, Dispatch & Support Around the Clock',
+        'notifyEmail' => NOTIFY_EMAIL,
+    );
+}
+
+function fbl_settings() {
+    static $cached = null;
+    if ($cached !== null) return $cached;
+    $merged = fbl_settings_defaults();
+    $path = FBL_DATA_DIR . '/settings.json';
+    if (file_exists($path)) {
+        $saved = json_decode(file_get_contents($path), true);
+        if (is_array($saved)) {
+            foreach ($saved as $k => $v) {
+                if ($v !== '' && $v !== null) $merged[$k] = $v;
+            }
+        }
+    }
+    $cached = $merged;
+    return $merged;
+}
+
+function fbl_setting($key) {
+    $s = fbl_settings();
+    return isset($s[$key]) ? $s[$key] : '';
+}
+
+function save_fbl_settings($arr) {
+    fbl_data_dir();
+    file_put_contents(FBL_DATA_DIR . '/settings.json', json_encode($arr, JSON_PRETTY_PRINT), LOCK_EX);
+}
+
+// tel:/mailto: hrefs derived from the editable values.
+function fbl_phone_href($phone) {
+    $digits = preg_replace('/[^0-9+]/', '', $phone);
+    if (strlen($digits) === 10) $digits = '+1' . $digits;
+    return 'tel:' . $digits;
+}
+
 function respond($code, $data) {
     http_response_code($code);
     header('Content-Type: application/json');
@@ -41,8 +129,8 @@ function clean($v) {
 }
 
 function email_shell($title, $inner) {
-    $name = COMPANY_NAME; $tag = COMPANY_TAGLINE; $addr = COMPANY_ADDRESS;
-    $phone = COMPANY_PHONE; $email = COMPANY_EMAIL; $dot = COMPANY_USDOT; $mc = COMPANY_MC;
+    $name = COMPANY_NAME; $tag = COMPANY_TAGLINE; $addr = fbl_setting('address');
+    $phone = fbl_setting('phone'); $email = fbl_setting('email'); $dot = COMPANY_USDOT; $mc = COMPANY_MC;
     return "
     <div style=\"margin:0;padding:24px;background:#f1f5f9;font-family:Arial,Helvetica,sans-serif;\">
       <div style=\"max-width:640px;margin:0 auto;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0;\">

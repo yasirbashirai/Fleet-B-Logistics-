@@ -27,6 +27,7 @@ mkdir deploy
 cp -R out/. deploy/
 cp static-hosting/.htaccess deploy/.htaccess
 cp -R static-hosting/php-api deploy/php-api
+cp -R static-hosting/admin deploy/admin
 cp static-hosting/DEPLOY-INSTRUCTIONS.md deploy/DEPLOY-INSTRUCTIONS.md
 
 echo ""

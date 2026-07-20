@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCallBar from "@/components/StickyCallBar";
+import LiveCompanyInfo from "@/components/LiveCompanyInfo";
 import JsonLd from "@/components/JsonLd";
 import { COMPANY, SITE_URL } from "@/lib/company";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyCallBar />
+        <LiveCompanyInfo />
       </body>
     </html>
   );
